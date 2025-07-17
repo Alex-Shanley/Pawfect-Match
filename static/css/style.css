@@ -19,10 +19,11 @@
   font-family: 'Fredoka', sans-serif;
   position: relative;
   overflow: hidden;
+  min-height: 60vh;
 }
 
 .hero_template h1 {
-  font-size: 3rem;
+  font-size: 5rem;
   font-weight: 800;
   z-index: 1;
   position: relative;
