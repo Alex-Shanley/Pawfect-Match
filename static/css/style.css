@@ -7,6 +7,10 @@
   box-sizing: border-box;
   text-decoration: none;
   transition: all 0.2s linear;
+  
+}
+
+body {
   background-color: #FEF7E5;
 }
 
@@ -21,6 +25,11 @@
   position: relative;
   overflow: hidden;
   min-height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 0 20px;
 }
 
 .hero_template h1 {
