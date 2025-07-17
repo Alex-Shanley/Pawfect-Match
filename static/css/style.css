@@ -40,3 +40,9 @@ body {
   font-family: 'Fredoka', sans-serif;
 }
 
+@media (max-width: 480px) {
+  .hero_template h1  {
+   font-size: 4rem;
+  }
+
+}
