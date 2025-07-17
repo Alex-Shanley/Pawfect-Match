@@ -11,14 +11,12 @@
 
 
 .hero_template{
-  
-  background-image: url("/static/images/backend\ hero\ image.png");
-  background-repeat: repeat;
+  background-image: url("../images/paw-background.png");
   background-size: 100px auto;
   color: white;
   text-align: center;
   padding: 80px 20px;
-  
+  font-family: 'Fredoka', sans-serif;
   position: relative;
   overflow: hidden;
 }
