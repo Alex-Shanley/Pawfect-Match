@@ -10,8 +10,7 @@ database_url = os.environ.get('DATABASE_URL')
 if database_url and database_url.startswith("postgres://"):
     database_url = database_url.replace("postgres://", "postgresql://", 1)
 
-
-app.config['SQLALCHEMY_DATABASE_URI'] = database_url or 'postgresql://pawfect_db_user:Bb8XbtoCWJV5mTKLw0FcE1tvKkUloeYR@dpg-d1saoeumcj7s73dgnqtg-a/pawfect_db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://pawfect_db_user:Bb8XbtoCWJV5mTKLw0FcE1tvKkUloeYR@dpg-d1saoeumcj7s73dgnqtg-a/pawfect_db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
@@ -26,10 +25,6 @@ class Pet(db.Model):
 
     def __repr__(self):
         return f'<Pet {self.name}>'
-
-@app.before_first_request
-def create_tables():
-    db.create_all()
 
 @app.route('/')
 def index():
@@ -54,5 +49,8 @@ def contact():
     return render_template('contact.html')
 
 if __name__ == '__main__':
+    with app.app_context():
+        db.create_all()  
+
     port = int(os.environ.get('PORT', 10000))
     app.run(host='0.0.0.0', port=port, debug=True)
