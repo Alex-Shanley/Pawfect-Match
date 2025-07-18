@@ -191,6 +191,12 @@ nav .sidebar {
   .contact-button {
     display: none !important;
   }
+
+    .nav ul {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+  
   
 }
 
