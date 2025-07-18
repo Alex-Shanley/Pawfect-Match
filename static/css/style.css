@@ -89,7 +89,7 @@ body {
   display: flex;
   align-items: center;
   color: #2743CB;
-  font-weight: 700;
+  font-weight: 600;
   transition: color 0.4s ease-in-out;
 }
 
