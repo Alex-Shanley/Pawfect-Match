@@ -157,6 +157,11 @@ nav .sidebar {
   .menu-button { 
     display: block;
   }
+  .nav ul {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
 }
 
 @media (max-width: 400px) {
@@ -166,8 +171,8 @@ nav .sidebar {
   .nav ul {
   padding-left: 0px;
   padding-right: 0px;
-  
 }
+
 }
 
 
