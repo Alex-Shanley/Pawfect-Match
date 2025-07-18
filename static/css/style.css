@@ -78,7 +78,8 @@ body {
   margin: 0;
   padding-left: 50px;
   padding-right: 50px;
-  padding-bottom: 20px;
+  padding-bottom: 10px;
+  padding-top: 10px;
   
 }
 
@@ -99,9 +100,9 @@ body {
 }
 
 .nav a:hover {
-  color: #000000;
+  color: #5268D5;
   font-weight: 800;
-  background-color: #c4ff42;
+ 
 }
 
 .nav li:first-child {
