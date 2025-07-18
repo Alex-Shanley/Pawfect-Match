@@ -88,7 +88,8 @@ body {
   text-decoration: none;
   display: flex;
   align-items: center;
-  color: #2F3247;
+  color: #2743CB;
+  font-weight: 700;
   transition: color 0.4s ease-in-out;
 }
 
