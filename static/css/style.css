@@ -187,7 +187,9 @@ nav .sidebar {
   .menu-button { 
     display: block;
   }
-
+  .contact-button {
+    display: none !important;
+  }
   
 }
 
