@@ -58,14 +58,14 @@ body {
   top: 0;          
   left: 0;       
   width: 100%;    
-  background-color: #ffffff;
+  background-color: #FEF7E5;
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
   z-index: 10;    
   transition: background-color 0.4s ease-in-out, opacity 0.4s ease-in-out, color 0.4s ease-in-out;
 }
 
 .logo-image {
-  height: 40px; 
+  height: 100px; 
   width: auto;
 }
 
@@ -79,7 +79,7 @@ body {
 }
 
 .nav li {
-  height: 70px;
+  height: 100px;
 }
 
 .nav a {
