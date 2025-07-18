@@ -148,7 +148,7 @@ nav .sidebar {
 }
 
 
-@media (max-width: 800px) {
+@media (max-width: 1018px) {
   .hideOnMobile{
     display: none;
   }
@@ -161,6 +161,11 @@ nav .sidebar {
   .sidebar{
     width: 100%;
   }
+  .nav ul {
+  padding-left: 0px;
+  padding-right: 0px;
+  
+}
 }
 
 
