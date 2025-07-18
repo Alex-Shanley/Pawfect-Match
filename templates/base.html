@@ -23,8 +23,8 @@
       <li><a href="{{ url_for('about') }}">ABOUT</a></li>
       <li><a href="{{ url_for('list_pets') }}">PETS</a></li>
       <li><a href="{{ url_for('adopt') }}">ADOPT</a></li>
-      <li><a href="{{ url_for('contact') }}">CONTACT</a></li>
       <li><a href="{{ url_for('faq') }}">FAQ</a></li>
+      <li><a href="{{ url_for('contact') }}">CONTACT US</a></li>
     </ul>
   </nav>
 
@@ -38,9 +38,39 @@
     {% endblock %}
   </main>
 
-  <footer>
-    <p>&copy; 2025 Pawfect Match. All rights reserved.</p>
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-row">
+              <div class="footer-colum">
+                <img src="{{ url_for('static', filename='images/footer logo.png') }}" alt="Logo">
+            </div>
+            <div class="footer-colum">
+                <h4>ADDRESS</h4>
+                <ul>
+                    <li><a href="#">8 Dublin road <br><br> Chapel Farm Rush<br><br> Co Dublin Ireland</a></li>
+                </ul>
+            </div>
+            <div class="footer-colum">
+                <h4>CONTACT</h4>
+                <ul>
+                    <li><a href="tel:+0821234567"><i class="fas fa-phone"></i> (082) 1234 567</a></li>
+                    <li><a href="mailto:info@alexshanley.com"><i class="fas fa-envelope"></i> info@alexshanley.com</a></li>
+                    <li><a><i class="fas fa-map-marker-alt"></i> Dublin, Ireland</a></li>
+                </ul>
+            </div>
+            <div class="footer-colum">
+                <h4>REACH OUT</h4>
+                <form action="">
+                    <input type="email" placeholder="Enter your email" class="input-email">
+                    <input type="Submit" value="Get in touch" class="input-submit">
+                </form>
+            </div>
+        </div>
+    </div>
   </footer>
+  <div class="Copyright">
+    <div class="copyright-text">Copyright © 2025 Portfolio Designed by Alex Shanley️</div>
+  </div>
 
   <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
