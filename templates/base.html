@@ -22,12 +22,12 @@
           <img src="{{ url_for('static', filename='images/Header logo.png') }}" alt="Pawfect Match Logo" class="logo-image" />
         </a>
       </li>
-      <li><a href="{{ url_for('index') }}">HOME</a></li>
-      <li><a href="{{ url_for('about') }}">ABOUT</a></li>
-      <li><a href="{{ url_for('list_pets') }}">PETS</a></li>
-      <li><a href="{{ url_for('adopt') }}">ADOPT</a></li>
-      <li><a href="{{ url_for('faq') }}">FAQ</a></li>
-      <li><a href="{{ url_for('contact') }}">CONTACT US</a></li>
+      <li class="hideOnMobile"><a href="{{ url_for('index') }}">HOME</a></li>
+      <li class="hideOnMobile"><a href="{{ url_for('about') }}">ABOUT</a></li>
+      <li class="hideOnMobile"><a href="{{ url_for('list_pets') }}">PETS</a></li>
+      <li class="hideOnMobile"><a href="{{ url_for('adopt') }}">ADOPT</a></li>
+      <li class="hideOnMobile"><a href="{{ url_for('faq') }}">FAQ</a></li>
+      <li class="hideOnMobile"><a href="{{ url_for('contact') }}">CONTACT US</a></li>
       <li class="menu-button" onclick="showSidebar()">
         <a href="#">
           <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368">
