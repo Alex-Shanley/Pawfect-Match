@@ -110,15 +110,7 @@ body {
 }
 
 
-.nav li:last-child {
-  height: auto;
-}
-
-.nav li:last-child a {
-  height: auto;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+.nav li.contact-button a {
   background-color: #2248d3;
   color: #fff;
   padding: 0.75rem 1.5rem;
@@ -130,7 +122,7 @@ body {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.nav li:last-child a:hover {
+.nav li.contact-button a:hover {
   background-color: #0d2aa7;
   transform: translateY(-2px);
 }
@@ -185,11 +177,8 @@ nav .sidebar {
   .menu-button { 
     display: block;
   }
-  .nav ul {
-  padding-left: 0px;
-  padding-right: 0px;
-}
 
+  
 }
 
 @media (max-width: 400px) {
