@@ -32,7 +32,7 @@ body {
   align-items: center;
   flex-direction: column;
   padding: 0 20px;
-  margin-top: 20px;
+  margin-top: 50px;
 }
 
 .hero_template h1 {
@@ -43,12 +43,7 @@ body {
   font-family: 'Fredoka', sans-serif;
 }
 
-@media (max-width: 800px) {
-  .hero_template{
-    margin-top: 50px;
-  }
 
-}
 
 
 @media (max-width: 480px) {
