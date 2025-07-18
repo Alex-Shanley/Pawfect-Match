@@ -77,6 +77,7 @@ body {
   align-items: center;
   margin: 0;
   padding: 0;
+  width: 70%;
 }
 
 .nav li {
