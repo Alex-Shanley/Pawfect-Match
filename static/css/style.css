@@ -114,7 +114,11 @@ body {
   background-color: #2248d3;
   color: #fff;
   height: auto;
- 
+   display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
   padding-left: 20px;
   padding-right: 20px;
   border-radius: 999px;
