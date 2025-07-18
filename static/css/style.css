@@ -110,17 +110,20 @@ body {
 }
 
 
+.nav li.contact-button {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
 .nav li.contact-button a {
   background-color: #2248d3;
   color: #fff;
   height: auto;
-   display: flex;
+  display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding: 8px 20px;
   border-radius: 999px;
   font-weight: 600;
   font-size: 18px;
