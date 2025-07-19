@@ -430,7 +430,7 @@ nav .sidebar {
   }
 
   .questions-left h2 {
-    font-size: 32px;
+    font-size: 64px;
     color: #233BA9;
     margin-bottom: 16px;
   }
@@ -455,6 +455,8 @@ nav .sidebar {
     padding: 32px;
     min-width: 300px;
   }
+
+
 
 
   /* FAQ page end */
