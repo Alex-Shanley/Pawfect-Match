@@ -655,7 +655,8 @@ nav .sidebar {
   color: white;
   padding: 10px 20px;
   border-radius: 25px;
-  margin-top: 15px;
+  margin-top: 30px;
+  font-size: 24px;
 }
 
 .stats {
@@ -668,7 +669,7 @@ nav .sidebar {
 }
 
 .stat strong {
-  font-size: 2rem;
+  font-size: 60px;
   display: block;
 }
 
