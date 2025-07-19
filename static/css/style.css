@@ -410,7 +410,25 @@ nav .sidebar {
 
   /* FAQ page start */
 
-  
+  .asked-questions {
+    padding: 60px 40px;
+  }
 
-    /* FAQ page end */
+  .questions-container{
+    display: flex;
+    gap: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+
+  .questions-left {
+    flex: 1;
+    max-width: 500px;
+  }
+
+
+  /* FAQ page end */
   
