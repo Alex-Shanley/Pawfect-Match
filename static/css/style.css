@@ -649,7 +649,28 @@ nav .sidebar {
   font-size: 24px;
 }
 
+.btn {
+  display: inline-block;
+  background: #264ec1;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 25px;
+  margin-top: 15px;
+}
 
+.stats {
+  display: flex;
+  justify-content: space-around;
+  padding: 40px 0;
+  background: #264ec1;
+  color: white;
+  text-align: center;
+}
+
+.stat strong {
+  font-size: 2rem;
+  display: block;
+}
 
 
      /* About us end */
