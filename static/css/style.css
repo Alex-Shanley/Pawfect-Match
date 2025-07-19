@@ -608,5 +608,8 @@ nav .sidebar {
   width: 70%;
 }
 
+.light-contain.reverse {
+  flex-direction: row-reverse;
+}
 
      /* About us end */
