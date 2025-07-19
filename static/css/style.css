@@ -675,5 +675,72 @@ nav .sidebar {
   display: block;
 }
 
+@media (max-width: 1024px) {
+  .light-txt,
+  .light-txt-rev {
+    margin-left: 30px !important;
+  }
+}
 
+@media (max-width: 768px) {
+  .light-contain,
+  .light-contain-rev {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .light-contain img,
+  .light-contain-rev img {
+    width: 100%;
+    max-width: none;
+  }
+
+  .light-txt,
+  .light-txt-rev {
+    width: 100%;
+    margin-left: 0 !important;
+  }
+
+  .light-txt h2,
+  .light-txt-rev h2 {
+    font-size: 42px;
+  }
+
+  .light-txt p,
+  .light-txt-rev p {
+    font-size: 18px;
+    width: 100%;
+  }
+
+  .about-light-rev {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .light-txt h2,
+  .light-txt-rev h2 {
+    font-size: 32px;
+  }
+
+  .light-txt p,
+  .light-txt-rev p {
+    font-size: 16px;
+  }
+
+  .btn {
+    padding: 15px 15px;
+    font-size: 18px;
+  }
+
+  .stats {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .stat strong {
+    font-size: 60px;
+  }
+}
      /* About us end */
