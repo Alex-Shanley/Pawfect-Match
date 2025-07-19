@@ -448,5 +448,14 @@ nav .sidebar {
     height: auto;
   }
 
+  .questions-right {
+    flex: 1;
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 32px;
+    min-width: 300px;
+  }
+
+
   /* FAQ page end */
   
