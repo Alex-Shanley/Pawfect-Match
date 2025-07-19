@@ -579,6 +579,7 @@ nav .sidebar {
   align-items: center;
   justify-content: space-between;
   gap: 40px;
+  padding-top: 30px;
 }
 
 .light-contain img {
@@ -602,6 +603,7 @@ nav .sidebar {
 .light-txt p {
   color: #233BA9;
   font-size: 24px;
+  width: 50%;
 }
 
 
