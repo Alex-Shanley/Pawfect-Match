@@ -608,8 +608,43 @@ nav .sidebar {
   width: 70%;
 }
 
-.light-contain.reverse {
-  flex-direction: row-reverse;
+
+.about-light-rev {
+  background-color: #fff5e1;
+  padding: 60px 5%;
 }
+
+.light-contain-rev {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.light-contain-rev img {
+  width: 50%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.light-txt-rev {
+  width: 50%;
+}
+
+.light-txt-rev h2 {
+  font-size: 60px;
+  color: #233BA9;
+  margin-bottom: 16px;
+}
+
+.light-txt-rev p {
+  color: #233BA9;
+  font-size: 24px;
+}
+
+
+
 
      /* About us end */
