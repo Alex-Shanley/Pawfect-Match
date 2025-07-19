@@ -483,7 +483,7 @@ nav .sidebar {
     transform: rotate(180deg);
   }
 
-  .faq.faq-content { 
+  .faq .faq-content { 
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.4s ease;
