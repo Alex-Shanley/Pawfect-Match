@@ -458,7 +458,7 @@ nav .sidebar {
     border-radius: 20px;
     padding: 32px;
     min-width: 300px;
-    min-height: 700px;
+    min-height: 800px;
   }
 
   .faq .faq-title {
@@ -487,11 +487,11 @@ nav .sidebar {
   }
 
   .faq .faq-content { 
-    max-height: 0;
+    padding-top: 30px;
     overflow: hidden;
     transition: max-height 0.4s ease;
     color: #333;
-    font-size: 16px;
+    font-size: 24px;
     line-height: 1.5;
   }
 
