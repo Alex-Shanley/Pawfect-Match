@@ -586,6 +586,7 @@ nav .sidebar {
   width: 100%;
   height: auto;
   object-fit: cover;
+  width: 800px;
 }
 
 .light-txt {
