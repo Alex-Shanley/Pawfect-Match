@@ -611,7 +611,9 @@ nav .sidebar {
 
 .about-light-rev {
   background-color: #fff5e1;
-  
+  padding-top: 60px;
+  padding-left: 60px;
+  padding-right: 60px;
   background-image: url("../images/aboutb.png");
   object-fit: contain;
 }
