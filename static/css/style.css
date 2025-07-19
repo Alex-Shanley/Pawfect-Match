@@ -456,7 +456,30 @@ nav .sidebar {
     min-width: 300px;
   }
 
+  .faq .faq-title {
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: #233BA9;
+    font-weight: 600;
+    text-align: left;
+    width: 100%;
+    cursor: pointer;
+    position: relative;
+    padding-right: 24px;
+  }
 
+  .faq .faq-title::after{
+    content: "▼";
+    position: absolute;
+    right: 0;
+    transition: transform 0.3s ease;
+  }
+
+  .faq-item.active .faq-title::after {
+    transform: rotate(180deg);
+  }
+ 
 
 
   /* FAQ page end */
