@@ -9,11 +9,14 @@ function hideSidebar() {
 }
 
 
-const items = document.querySelectorAll ('.faq-title');
 
-items.forEach (items => {
-    items.addEventListener('click', () => {
-        const parent = items.parentElement;
-        parent.classList.toggle('active');
-    });
+
+
+const items = document.querySelectorAll('.faq-title');
+
+items.forEach(item => {
+  item.addEventListener('click', () => {
+    const parent = item.parentElement;
+    parent.classList.toggle('active');
+  });
 });
