@@ -458,9 +458,11 @@ nav .sidebar {
     border-radius: 20px;
     padding: 32px;
     min-width: 300px;
+    min-height: 700px;
   }
 
   .faq .faq-title {
+    padding-top: 70px;
     background: none;
     border: none;
     font-size: 30px;
