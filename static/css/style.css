@@ -570,3 +570,22 @@ nav .sidebar {
 
   /* FAQ page end */
   
+
+
+    /* About us start */
+
+    .light-contain {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+
+    .light-contain img {
+      max-width: 300px;
+      width: 100%;
+    }
+
+
+     /* About us end */
