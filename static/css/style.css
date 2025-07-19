@@ -462,7 +462,7 @@ nav .sidebar {
   }
 
   .faq .faq-title {
-    padding-top: 50px;
+    padding-top: 30px;
     background: none;
     border: none;
     font-size: 30px;
@@ -489,6 +489,7 @@ nav .sidebar {
   .faq .faq-content { 
     max-height: 0;
     padding-top: 30px;
+    padding-bottom: 30px;
     overflow: hidden;
     transition: max-height 0.4s ease;
     color: #333;
