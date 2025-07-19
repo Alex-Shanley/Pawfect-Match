@@ -579,7 +579,7 @@ nav .sidebar {
   align-items: center;
   justify-content: space-between;
   gap: 40px;
-  padding-top: 30px;
+  padding-top: 70px;
 }
 
 .light-contain img {
@@ -593,6 +593,7 @@ nav .sidebar {
 .light-txt {
   width: 90%;
   flex: 1 1 50%;
+  margin-left: 60px;
 }
 
 .light-txt h2 {
