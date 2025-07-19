@@ -583,9 +583,14 @@ nav .sidebar {
     }
 
     .light-contain img {
-      max-width: 300px;
+      max-width: 800px;
       width: 100%;
     }
 
+    .light-txt h2 {
+    font-size: 60px;
+    color: #233BA9;
+    margin-bottom: 16px;
+  }
 
      /* About us end */
