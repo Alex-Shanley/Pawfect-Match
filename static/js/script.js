@@ -25,7 +25,6 @@ items.forEach(item => {
       }
     });
 
-    
     parent.classList.toggle('active');
   });
 });

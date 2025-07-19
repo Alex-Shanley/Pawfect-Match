@@ -503,7 +503,70 @@ nav .sidebar {
     padding-top: 8px;
   }
  
+@media (max-width: 1024px) {
+  .questions-left h2 {
+    font-size: 48px;
+  }
 
+  .questions-left p,
+  .faq .faq-content {
+    font-size: 20px;
+  }
+
+  .faq .faq-title {
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 768px) {
+  .asked-questions {
+    padding: 40px 20px;
+  }
+
+  .questions-container {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .questions-left,
+  .questions-right {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  .questions-left h2 {
+    font-size: 40px;
+  }
+
+  .questions-left p,
+  .faq .faq-content {
+    font-size: 18px;
+  }
+
+  .faq .faq-title {
+    font-size: 22px;
+  }
+
+  .questions-right {
+    padding: 30px;
+    min-height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .questions-left h2 {
+    font-size: 32px;
+  }
+
+  .questions-left p,
+  .faq .faq-content {
+    font-size: 16px;
+  }
+
+  .faq .faq-title {
+    font-size: 20px;
+  }
+}
 
   /* FAQ page end */
   
