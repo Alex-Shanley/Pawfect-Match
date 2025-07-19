@@ -578,13 +578,17 @@ nav .sidebar {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      
       gap: 40px;
     }
 
     .light-contain img {
+      flex: 1 1 50%;
       max-width: 800px;
       width: 100%;
+    }
+
+    .light-txt {
+      flex: 1 1 50%;
     }
 
     .light-txt h2 {
