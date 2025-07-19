@@ -412,12 +412,13 @@ nav .sidebar {
 
   .asked-questions {
     padding: 60px 40px;
+    min-height: 60vh;
   }
 
   .questions-container{
     display: flex;
     gap: 60px;
-    max-width: 80%;
+    max-width: 90%;
     margin: 0 auto;
     align-items: flex-start;
     flex-wrap: wrap;
@@ -426,11 +427,11 @@ nav .sidebar {
 
   .questions-left {
     flex: 1;
-    max-width: 500px;
+    max-width: 100%;
   }
 
   .questions-left h2 {
-    font-size: 64px;
+    font-size: 50px;
     color: #233BA9;
     margin-bottom: 16px;
   }
