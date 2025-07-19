@@ -433,13 +433,14 @@ nav .sidebar {
   }
 
   .questions-left h2 {
-    font-size: 50px;
+    font-size: 60px;
     color: #233BA9;
     margin-bottom: 16px;
   }
 
   .questions-left p {
-    font-size: 16px;
+    font-size: 24px;
+    font-weight: 500;
     color: #233BA9;
     margin-bottom: 24px;
     line-height: 1.6;
