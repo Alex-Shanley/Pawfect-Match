@@ -574,32 +574,34 @@ nav .sidebar {
 
     /* About us start */
 
-    .light-contain {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 40px;
-    }
+.light-contain {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
 
-    .light-contain img {
-      flex: 1 1 50%;
-      max-width: 800px;
-      width: 100%;
-    }
+.light-contain img {
+  flex: 1 1 50%;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
 
-    .light-txt {
-      flex: 1 1 50%;
-    }
+.light-txt {
+  flex: 1 1 50%;
+}
 
-    .light-txt h2 {
-    font-size: 60px;
-    color: #233BA9;
-    margin-bottom: 16px;
-  }
+.light-txt h2 {
+  font-size: 60px;
+  color: #233BA9;
+  margin-bottom: 16px;
+}
 
-     .light-txt p {
-   color: #233BA9;
-    font-size: 24px;
-  }
+.light-txt p {
+  color: #233BA9;
+  font-size: 24px;
+}
+
 
      /* About us end */
