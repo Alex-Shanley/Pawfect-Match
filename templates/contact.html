@@ -10,10 +10,43 @@
 {% set title = "Contact us" %}
 {% include 'hero.html' %}
 
+<!-- Contact image start -->
+
 <div class="contact">
     <div class="left-contact">
         <div class="left-image">
             <img src="{{ url_for('static', filename='images/contact-image.png') }}" alt="Contact image" class="Contact image" />
+        </div>
+    </div>
+
+    <!-- Contact image end -->
+
+
+    <div class="right-contact">
+        <div class="form-box">
+            <h2>Get In touch </h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</p>
+            <form>
+
+                <div class="name-row">
+                    <input type="text" placeholder="First name" required>
+                    <input type="text" placeholder="Surname" required>
+                </div>
+
+                <input type="email" placeholder="Email" required>
+                <textarea placeholder="Message" required></textarea>
+
+                <label class="checkbox-wrapper">
+                    <input type="checkbox" checked required>
+                    <span>I agree to the Terms and Conditions</span>
+                </label>
+
+
+                <button type="submit">🐾 Send</button>
+
+
+            </form>
+
         </div>
 
     </div>

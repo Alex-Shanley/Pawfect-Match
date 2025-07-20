@@ -9,6 +9,8 @@
 {% include 'hero.html' %}
 
 
+<!-- about us first section start -->
+
 <section class="about-light">
     <div class="light-contain">
         <img src="{{ url_for('static', filename='images/woman.png') }}" alt="women and dog" />
@@ -22,7 +24,10 @@
 </section>
 
 
+<!-- about us first section end-->
 
+
+<!-- about us second section start-->
 
 <section class="about-light-rev">
   <div class="light-contain-rev">
@@ -37,11 +42,19 @@
   </div>
 </section>
 
+<!-- about us second section end-->
+
+
+<!-- stat start-->
+
 
  {% include 'stats.html' %}
 
 
+ <!-- stat end-->
 
+
+<!-- about us third section start-->
 
 
 <section class="about-light">
@@ -55,6 +68,8 @@
         </div>
     </div>
 </section>
+
+<!-- about us third section end-->
 
 
 {% endblock %}
