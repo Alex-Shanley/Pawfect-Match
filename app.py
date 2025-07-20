@@ -43,9 +43,18 @@ def list_pets():
 def adopt():
     return render_template('adopt.html')
 
-@app.route('/about')
+
+
+@app.route('/about', methods =['GET', 'POST'])
 def about():
+
     return render_template('about.html')
+
+
+
+
+
+
 
 @app.route('/contact', methods =['GET', 'POST'])
 def contact():
@@ -63,8 +72,21 @@ def contact():
     return render_template('contact.html')
 
 
-@app.route('/faq')
+@app.route('/faq', methods =['GET', 'POST'])
 def faq():
+    if request.method == 'POST':
+        first_name = request.form.get('first_name')
+        surname = request.form.get('surname')
+        email = request.form.get('email')
+        message = request.form.get('message')
+        terms = request.form.get('terms')
+
+        
+        flash ('Thank you for contacting us!!')
+        return redirect(url_for('faq'))
+
+
+
     return render_template('faq.html')
 
 
