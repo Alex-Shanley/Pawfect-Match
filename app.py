@@ -57,7 +57,7 @@ def contact():
         terms = request.form.get('terms')
 
         
-        flash ('Thank you for contacting us')
+        flash ('Thank you for contacting us!!')
         return redirect(url_for('contact'))
     
     return render_template('contact.html')
