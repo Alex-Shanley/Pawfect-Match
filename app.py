@@ -44,7 +44,7 @@ class Submission(db.Model):
 with app.app_context():
     db.create_all()
 
-@app.route('/index', methods=['GET', 'POST'])
+@app.route('/', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
         first_name = request.form.get('first_name')
