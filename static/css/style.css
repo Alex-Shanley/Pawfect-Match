@@ -1152,7 +1152,7 @@ input[type="checkbox"] {
   }
 
   .left-image img {
-    max-width: 900%;
+    max-width: 100%;
   }
 }
 
