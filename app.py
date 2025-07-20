@@ -29,6 +29,9 @@ class Pet(db.Model):
 with app.app_context():
     db.create_all()
 
+
+
+
 @app.route('/index', methods =['GET', 'POST'])
 def index():
     if request.method == 'POST':
@@ -37,9 +40,15 @@ def index():
         email = request.form.get('email')
         message = request.form.get('message')
         terms = request.form.get('terms')
+
         
         flash ('Thank you for contacting us!!')
-    return render_template('index.html')
+
+        return render_template('index.html', form_action=url_for('index'), first_name=first_name, surname=surname, email=email, message=message, terms=terms)
+        
+                            
+    return render_template('index.html', form_action=url_for('index'))
+   
 
 
 

@@ -1146,6 +1146,11 @@ input[type="checkbox"] {
     font-size: 20px;
   }
 
+   .form-box-template {
+    padding: 30px 20px;
+    width: 100%;
+  }
+
   .left-image img {
     max-width: 100%;
   }
@@ -1165,6 +1170,7 @@ input[type="checkbox"] {
 
   .form-box-template {
     padding: 30px 20px;
+    width: 100%;
   }
 
   .form-box-template h2 {
