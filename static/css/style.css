@@ -1013,7 +1013,7 @@ input[type="checkbox"] {
   padding: 20px; 
 }
 
-.form-box {
+.form-box-template {
   width: 30%;
   background-color: rgba(255, 255, 255, 0.9); 
   padding: 30px;
