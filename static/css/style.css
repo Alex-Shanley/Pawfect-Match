@@ -802,6 +802,7 @@ nav .sidebar {
 
      .form-box {
        background-image: url("../images/contact-form-image.png");
+       object-fit: contain;
        padding: 40px;
        border-radius: 30px;
      }
