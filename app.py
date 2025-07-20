@@ -5,12 +5,19 @@ import os
 app = Flask(__name__, template_folder='templates', static_folder='static')
 app.secret_key = 'a8f3@9!gks92&x1z'
 
+
 database_url = os.environ.get('DATABASE_URL')
-if database_url and database_url.startswith("postgres://"):
+
+if not database_url:
+    database_url = 'sqlite:///test.db'
+
+
+if database_url.startswith("postgres://"):
     database_url = database_url.replace("postgres://", "postgresql://", 1)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = database_url 
+app.config['SQLALCHEMY_DATABASE_URI'] = database_url
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
 
 db = SQLAlchemy(app)
 
@@ -24,6 +31,21 @@ class Pet(db.Model):
 
     def __repr__(self):
         return f'<Pet {self.name}>'
+    
+
+
+
+class Submission(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    first_name = db.Column(db.String(100), nullable=False)
+    surname = db.Column(db.String(100), nullable=False)
+    email = db.Column(db.String(100), nullable=False)
+    message = db.Column(db.Text, nullable=False)  # use Text for longer input
+    terms = db.Column(db.Boolean, nullable=False)  # checkbox => Boolean
+
+    def __repr__(self):
+        return f'<Submission {self.first_name} {self.surname}>'
+
 
 
 with app.app_context():
