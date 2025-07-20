@@ -825,4 +825,30 @@ nav .sidebar {
       flex-direction: column;
       gap: 20px;
      }
+
+
+     .name-row {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+     }
+
+
+
+     input [type=text],
+     input [type=email],
+     textarea {
+      padding: 15px;
+      border: 2px solid #233BA9;
+      font-size: 14px;
+      width: 100%;
+     }
+
+
+
+
+
+
+
+
     /* contact end */
