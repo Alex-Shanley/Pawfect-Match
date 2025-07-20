@@ -29,10 +29,21 @@ class Pet(db.Model):
 with app.app_context():
     db.create_all()
 
-@app.route('/')
+@app.route('/index', methods =['GET', 'POST'])
 def index():
-    pets = Pet.query.all()
-    return render_template('index.html', pets=pets)
+    if request.method == 'POST':
+        first_name = request.form.get('first_name')
+        surname = request.form.get('surname')
+        email = request.form.get('email')
+        message = request.form.get('message')
+        terms = request.form.get('terms')
+        
+        flash ('Thank you for contacting us!!')
+    return render_template('index.html')
+
+
+
+
 
 @app.route('/pets')
 def list_pets():
@@ -83,11 +94,12 @@ def faq():
 
         
         flash ('Thank you for contacting us!!')
-        return redirect(url_for('faq'))
 
-
-
-    return render_template('faq.html')
+        return render_template('faq.html', form_action=url_for('faq'), first_name=first_name, surname=surname, email=email, message=message, terms=terms)
+        
+                               
+    
+    return render_template('faq.html', form_action=url_for('faq'))
 
 
 
