@@ -1015,6 +1015,17 @@ input[type="checkbox"] {
   box-sizing: border-box;
 }
 
+
+.right-contact-template {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+
+
+
 .form-box-template {
   width: 50%;
   margin: 0;
