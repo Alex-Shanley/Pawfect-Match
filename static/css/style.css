@@ -782,5 +782,27 @@ nav .sidebar {
       flex-wrap: wrap;
      }
 
+     .left-contact {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+     }
 
+     .left-image img {
+      max-width: 700px;
+      height: auto;
+      object-fit: contain;
+     }
+
+
+     .right-contact {
+      flex: 1;
+     }
+
+     .form-box {
+
+       background-image: url("../images/contact-form-image.png");
+
+     }
     /* contact end */
