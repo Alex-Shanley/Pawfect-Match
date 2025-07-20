@@ -54,7 +54,7 @@
                     <span>I agree to the Terms and Conditions</span>
                 </label>
 
-        {% with messages = get_flashed_messages()%}
+        {% with messages = get_flashed_messages(with_categories=true)%}
             {% if messages %}
             <ul class="flashes">
                 {% for message in messages %}

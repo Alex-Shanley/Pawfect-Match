@@ -57,7 +57,7 @@ def contact():
         terms = request.form.get('terms')
 
         if not all([first_name, surname, email, message, terms]):
-            flash('Please fill in all the fields and agree to the terms and conditions')
+            flash('Please fill in all the fields')
             return redirect(url_for('contact'))
         
         flash ('Thank you for contacting us')
