@@ -116,6 +116,23 @@ def faq():
         message = request.form.get('message')
         terms = request.form.get('terms')
 
+
+        # Saving to database start
+
+        submission = Submission (
+            first_name=first_name,
+            surname=surname,
+            email=email,
+            message=message,
+            terms=terms
+        )
+
+        db.session.add(submission)
+        db.session.commit()
+
+
+        # Saving to database end
+
         
         flash ('Thank you for contacting us!!')
 
