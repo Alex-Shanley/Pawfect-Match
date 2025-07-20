@@ -777,7 +777,7 @@ nav .sidebar {
       align-items: flex-start;
       padding: 50px;
       gap: 50px;
-      max-width: 1400px;
+      max-width: 90%;
       margin: 0 auto;
       flex-wrap: wrap;
      }
