@@ -1002,8 +1002,8 @@ input[type="checkbox"] {
 
 
       /* form template style start */
-
 .contact-form-container {
+  background-image: url("../images/paw-background.png");
   display: flex;
   justify-content: center; 
   align-items: center;     
@@ -1012,19 +1012,17 @@ input[type="checkbox"] {
   background-position: center;
   background-size: cover;
   padding: 20px;
+  box-sizing: border-box;
 }
-
-
-
 
 .form-box-template {
   width: 50%;
-  margin-top: 50px;
+  margin: 0;
   background-image: url("../images/contact-form-image.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  padding: 40px;
+  padding: 40px 30px;
   border-radius: 30px;
   backdrop-filter: blur(2px);
 }
@@ -1208,6 +1206,8 @@ input[type="checkbox"] {
     font-size: 14px;
   }
 }
+
+
 
 
 
