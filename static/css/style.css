@@ -890,6 +890,22 @@ input[type="checkbox"] {
 }
 
 
+.flashes {
+  list-style-type: none;  
+  padding: 0;
+  margin: 1em 0;
+}
+
+.flashes li {
+  background-color: #d1e7dd;   
+  color: #0f5132;              
+  border: 1px solid #badbcc;   
+  padding: 12px 20px;
+  border-radius: 5px;
+  font-weight: 600;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  margin-bottom: 10px;
+}
 
 
 
