@@ -1,8 +1,9 @@
-from flask import Flask, render_template, url_for
+from flask import Flask, render_template, url_for, request, redirect, flash
 from flask_sqlalchemy import SQLAlchemy
 import os
 
 app = Flask(__name__, template_folder='templates', static_folder='static')
+app.secret_key = 'a8f3@9!gks92&x1z'
 
 database_url = os.environ.get('DATABASE_URL')
 if database_url and database_url.startswith("postgres://"):
