@@ -866,7 +866,18 @@ nav .sidebar {
 
      .cbtn {
         align-self: flex-end;
-        
+        background-color: #233BA9;
+        color: white;
+        border: none;
+        padding: 15px 30px;
+        font-size: 16px;
+        border-radius: 999px;
+        cursor: pointer;
+     }
+
+     .cbtn:hover{
+        background-color: #0d2aa7;
+        transform: translateY(-2px);
 
      }
 
