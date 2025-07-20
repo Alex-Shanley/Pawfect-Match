@@ -909,7 +909,93 @@ input[type="checkbox"] {
   margin-bottom: 10px;
 }
 
+@media (max-width: 1024px) {
+  .contact {
+    padding: 60px 30px;
+    gap: 30px;
+  }
 
+  .form-box h2 {
+    font-size: 40px;
+  }
+
+  .form-box p {
+    font-size: 20px;
+  }
+
+  .left-image img {
+    max-width: 100%;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .contact {
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 20px;
+  }
+
+  .left-contact,
+  .right-contact {
+    width: 100%;
+  }
+
+  .form-box {
+    padding: 30px 20px;
+  }
+
+  .form-box h2 {
+    font-size: 32px;
+    text-align: center;
+  }
+
+  .form-box p {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .name-row {
+    flex-direction: column;
+  }
+
+  .cbtn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .flashes {
+    width: 100%;
+    font-size: 18px;
+  }
+
+  .flashes li {
+    font-size: 18px;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .form-box h2 {
+    font-size: 28px;
+  }
+
+  .form-box p {
+    font-size: 16px;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    font-size: 13px;
+    padding: 12px;
+  }
+
+  .cbtn {
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+}
 
 
 
