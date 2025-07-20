@@ -12,7 +12,7 @@ database_url = os.environ.get('DATABASE_URL', 'sqlite:///test.db')
 if database_url.startswith("postgres://"):
     database_url = database_url.replace("postgres://", "postgresql://", 1) 
 
-SQLALCHEMY_DATABASE_URI = 'postgresql://pawfectdb_user:your_password@db_host:5432/pawfectdb'
+SQLALCHEMY_DATABASE_URI = 'postgresql://pawfectdb_user:your_password@your_db_host:5432/pawfectdb'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
