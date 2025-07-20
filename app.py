@@ -8,9 +8,7 @@ load_dotenv()
 app = Flask(__name__, template_folder='templates', static_folder='static')
 app.secret_key = 'a8f3@9!gks92&x1z'
 
-database_url = os.environ.get('DATABASE_URL')
-if not database_url:
-    database_url = 'sqlite:///test.db'
+database_url = os.environ.get('DATABASE_URL', 'sqlite:///test.db')
 if database_url.startswith("postgres://"):
     database_url = database_url.replace("postgres://", "postgresql://", 1)
 
@@ -51,7 +49,7 @@ def index():
         surname = request.form.get('surname')
         email = request.form.get('email')
         message = request.form.get('message')
-        terms = request.form.get('terms')
+        terms = request.form.get('terms') == 'on'
         flash('Thank you for contacting us!!')
         return render_template('index.html', form_action=url_for('index'), first_name=first_name, surname=surname, email=email, message=message, terms=terms)
     return render_template('index.html', form_action=url_for('index'))
@@ -72,7 +70,7 @@ def about():
         surname = request.form.get('surname')
         email = request.form.get('email')
         message = request.form.get('message')
-        terms = request.form.get('terms')
+        terms = request.form.get('terms') == 'on'
         flash('Thank you for contacting us!!')
         return render_template('about.html', form_action=url_for('about'), first_name=first_name, surname=surname, email=email, message=message, terms=terms)
     return render_template('about.html', form_action=url_for('about'))
