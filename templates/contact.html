@@ -30,6 +30,21 @@
     <div class="right-contact">
         <div class="form-box">
             <h2>Get In touch </h2>
+
+            {% with messages = get_flashed_messages()%}
+            {% if messages %}
+            <ul class="flashes">
+                {% for message in messages %}
+                <li>
+                    {{message}}
+                </li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            {% endwith %}
+
+
+
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</p>
            
            
