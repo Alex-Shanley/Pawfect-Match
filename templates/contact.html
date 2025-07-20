@@ -31,18 +31,21 @@
         <div class="form-box">
             <h2>Get In touch </h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</p>
-            <form>
+           
+           
+            <form method="POST" action="{{ url_for('contact') }}">
 
                 <div class="name-row">
-                    <input type="text" placeholder="First name" required>
-                    <input type="text" placeholder="Surname" required>
+                     <input type="text" name="first_name" placeholder="First name" required>
+                     <input type="text" name="surname" placeholder="Surname" required>
                 </div>
 
-                <input type="email" placeholder="Email" required>
-                <textarea placeholder="Message" required></textarea>
+                <input type="email" name="email" placeholder="Email" required>
+                <textarea name="message" placeholder="Message" required></textarea>
+
 
                 <label class="checkbox-wrapper">
-                    <input type="checkbox" checked required>
+                     <input type="checkbox" name="terms" required>
                     <span>I agree to the Terms and Conditions</span>
                 </label>
 

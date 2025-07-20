@@ -46,8 +46,22 @@ def adopt():
 def about():
     return render_template('about.html')
 
-@app.route('/contact')
+@app.route('/contact', methods =['GET', 'POST'])
 def contact():
+    if request.method == 'POST':
+        first_name = request.form.get('first_name')
+        surname = request.form.get('surname')
+        email = request.form.get('email')
+        message = request.form.get('message')
+        terms = request.form.get('terms')
+
+        if not all([first_name, surname, email, message, terms]):
+            flash('Please fill in all the fields and agree to the terms and conditions')
+            return redirect(url_for('contact'))
+        
+        flash ('Thank you for contacting us')
+        return redirect(url_for('contact'))
+    
     return render_template('contact.html')
 
 
