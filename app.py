@@ -58,8 +58,23 @@ def adopt():
 
 @app.route('/about', methods =['GET', 'POST'])
 def about():
+    if request.method == 'POST':
+        first_name = request.form.get('first_name')
+        surname = request.form.get('surname')
+        email = request.form.get('email')
+        message = request.form.get('message')
+        terms = request.form.get('terms')
 
-    return render_template('about.html')
+        
+        flash ('Thank you for contacting us!!')
+
+        return render_template('about.html', form_action=url_for('about'), first_name=first_name, surname=surname, email=email, message=message, terms=terms)
+        
+                               
+    
+    return render_template('about.html', form_action=url_for('about'))
+
+
 
 
 
