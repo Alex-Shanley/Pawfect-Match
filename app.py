@@ -101,7 +101,7 @@ def about():
 
     dog_facts = []
     try:
-        response = requests.get("https://dog-api.kinduff.com/api/facts?number=3")
+        response = requests.get("https://dogapi.dog/api/v2/facts?limit=3")
         if response.status_code == 200:
             dog_facts = response.json().get("facts", [])
     except Exception:
