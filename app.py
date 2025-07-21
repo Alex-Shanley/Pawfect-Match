@@ -101,20 +101,21 @@ def about():
         },
     ]
 
-    dog_facts = []
-    try:
-        response = requests.get("https://dogapi.dog/api/v2/facts?limit=3")
-        if response.status_code == 200:
-            data = response.json()
-            dog_facts = [item['fact'] for item in data.get('data', [])]
-    except Exception as e:
-        print("Error fetching dog facts:", e)
-        dog_facts = [
-            "All my dogs were named Charlie",
-            "Dogs can learn over 1000 words",
-            "They dream just like humans!"
-        ]
+dog_facts = []
+try:
+    response = requests.get("https://dogapi.dog/api/v2/facts?limit=3")
+    if response.status_code == 200:
+        data = response.json()
+        dog_facts = [item['attributes']['body'] for item in data.get('data', [])]
+except Exception as e:
+    print("Error fetching dog facts:", e)
+    dog_facts = [
+        "All my dogs were named Charlie",
+        "Dogs can learn over 1000 words",
+        "They dream just like humans!"
+    ]
 
+    
     if request.method == 'POST':
         first_name = request.form.get('first_name')
         surname = request.form.get('surname')
