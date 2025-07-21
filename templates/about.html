@@ -23,9 +23,17 @@
     </div>
   </div>
 </section>
+
+
+{%if loo.index == 2 %}
+{% include 'stats.html' %}
+{% endif%}
 {% endfor %}
 
-{% include 'stats.html' %}
+
+
+
+
 {% include 'form.html' %}
 
 {% endblock %}
