@@ -1235,8 +1235,23 @@ input[type="checkbox"] {
 
  /* dog fun facts start  */
 
- 
+ .dog-facts-title {
+  text-align: center;
+   font-size: 60px;
+  color: #233BA9;
+  margin-bottom: 16px;
+ }
 
+ .dog-facts {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  padding: 40px;
+ }
+
+
+ 
 
   /* dog fun facts end */
 

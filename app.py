@@ -43,6 +43,27 @@ class Submission(db.Model):
 with app.app_context():
     db.create_all()
 
+
+def get_dog_facts(limit=3):
+    try:
+        response = requests.get(f"https://dogapi.dog/api/v2/facts?limit={limit}")
+        if response.status_code == 200:
+            data = response.json()
+            return [item['attributes']['body'] for item in data.get('data', [])]
+    except Exception as e:
+        print("Error fetching dog facts:", e)
+    return [
+        "All my dogs were named Charlie",
+        "Dogs can learn over 1000 words",
+        "They dream just like humans!"
+    ]
+
+
+@app.context_processor
+def inject_dog_facts():
+    return {'dog_facts': get_dog_facts()}
+
+
 @app.route('/', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
@@ -99,20 +120,6 @@ def about():
         },
     ]
 
-    dog_facts = []
-    try:
-        response = requests.get("https://dogapi.dog/api/v2/facts?limit=3")
-        if response.status_code == 200:
-            data = response.json()
-            dog_facts = [item['attributes']['body'] for item in data.get('data', [])]
-    except Exception as e:
-        print("Error fetching dog facts:", e)
-        dog_facts = [
-            "All my dogs were named Charlie",
-            "Dogs can learn over 1000 words",
-            "They dream just like humans!"
-        ]
-
     if request.method == 'POST':
         first_name = request.form.get('first_name')
         surname = request.form.get('surname')
@@ -128,15 +135,13 @@ def about():
             email=email,
             message=message,
             terms=terms,
-            sections=sections,
-            dog_facts=dog_facts
+            sections=sections
         )
 
     return render_template(
         'about.html',
         form_action=url_for('about'),
-        sections=sections,
-        dog_facts=dog_facts
+        sections=sections
     )
 
 @app.route('/contact', methods=['GET', 'POST'])
