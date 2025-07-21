@@ -65,15 +65,13 @@ def adopt():
 
 @app.route('/about', methods=['GET', 'POST'])
 def about():
-
-
     sections = [
         {
             'image': "images/woman.png",
             'alt': 'woman and dog',
             'title': 'From A Dream',
-            'paragraphs' : [
-                'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+            'paragraphs': [
+                'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
                 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
             ],
             'reverse': False
@@ -82,8 +80,8 @@ def about():
             'image': "images/bulldog.png",
             'alt': 'woman and dog',
             'title': 'From A Dream',
-            'paragraphs' : [
-                'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+            'paragraphs': [
+                'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
                 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
             ],
             'reverse': True
@@ -92,17 +90,13 @@ def about():
             'image': "images/man.png",
             'alt': 'woman and dog',
             'title': 'From A Dream',
-            'paragraphs' : [
-                'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+            'paragraphs': [
+                'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
                 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
             ],
             'reverse': False
-
         },
     ]
-
-
-
 
     if request.method == 'POST':
         first_name = request.form.get('first_name')
@@ -111,8 +105,24 @@ def about():
         message = request.form.get('message')
         terms = request.form.get('terms') == 'on'
         flash('Thank you for contacting us!!')
-        return render_template('about.html', form_action=url_for('about'), first_name=first_name, surname=surname, email=email, message=message, terms=terms)
-    return render_template('about.html', form_action=url_for('about'))
+        return render_template(
+            'about.html',
+            form_action=url_for('about'),
+            first_name=first_name,
+            surname=surname,
+            email=email,
+            message=message,
+            terms=terms,
+            sections=sections
+        )
+
+    # GET request
+    return render_template(
+        'about.html',
+        form_action=url_for('about'),
+        sections=sections
+    )
+
 
 @app.route('/contact', methods=['GET', 'POST'])
 def contact():
