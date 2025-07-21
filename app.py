@@ -64,8 +64,6 @@ def list_pets():
 def adopt():
     return render_template('adopt.html')
 
-
-
 @app.route('/about', methods=['GET', 'POST'])
 def about():
     sections = [
@@ -74,8 +72,8 @@ def about():
             'alt': 'woman and dog',
             'title': 'From A Dream',
             'paragraphs': [
-                'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-                'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+                'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+                'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
             ],
             'reverse': False
         },
@@ -84,8 +82,8 @@ def about():
             'alt': 'woman and dog',
             'title': 'From A Dream',
             'paragraphs': [
-                'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-                'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+                'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+                'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
             ],
             'reverse': True
         },
@@ -94,28 +92,27 @@ def about():
             'alt': 'woman and dog',
             'title': 'From A Dream',
             'paragraphs': [
-                'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-                'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+                'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+                'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
             ],
             'reverse': False
         },
     ]
 
-dog_facts = []
-try:
-    response = requests.get("https://dogapi.dog/api/v2/facts?limit=3")
-    if response.status_code == 200:
-        data = response.json()
-        dog_facts = [item['attributes']['body'] for item in data.get('data', [])]
-except Exception as e:
-    print("Error fetching dog facts:", e)
-    dog_facts = [
-        "All my dogs were named Charlie",
-        "Dogs can learn over 1000 words",
-        "They dream just like humans!"
-    ]
+    dog_facts = []
+    try:
+        response = requests.get("https://dogapi.dog/api/v2/facts?limit=3")
+        if response.status_code == 200:
+            data = response.json()
+            dog_facts = [item['attributes']['body'] for item in data.get('data', [])]
+    except Exception as e:
+        print("Error fetching dog facts:", e)
+        dog_facts = [
+            "All my dogs were named Charlie",
+            "Dogs can learn over 1000 words",
+            "They dream just like humans!"
+        ]
 
-    
     if request.method == 'POST':
         first_name = request.form.get('first_name')
         surname = request.form.get('surname')
@@ -141,7 +138,6 @@ except Exception as e:
         sections=sections,
         dog_facts=dog_facts
     )
-
 
 @app.route('/contact', methods=['GET', 'POST'])
 def contact():
