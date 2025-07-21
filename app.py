@@ -116,7 +116,7 @@ def about():
             sections=sections
         )
 
-    # GET request
+ 
     return render_template(
         'about.html',
         form_action=url_for('about'),
