@@ -32,14 +32,13 @@
 {% endfor %}
 
 
-        <h2>Fun Dog Facts 🐶</h2>
-        <div class="dog-facts">
-            {% for fact in dog_facts %}
-                <div class="dog-fact-card">
-                    <p>{{ fact }}</p>
-                </div>
-            {% endfor %}
-        </div>
+
+{% include 'dog-fact.html' %}
+
+
+
+
+
 
 
 
