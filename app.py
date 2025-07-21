@@ -65,6 +65,45 @@ def adopt():
 
 @app.route('/about', methods=['GET', 'POST'])
 def about():
+
+
+    sections = [
+        {
+            'image': "images/woman.png",
+            'alt': 'woman and dog',
+            'title': 'From A Dream',
+            'paragraphs' : [
+                'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+                'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+            ],
+            'reverse': False
+        },
+        {
+            'image': "images/bulldog.png",
+            'alt': 'woman and dog',
+            'title': 'From A Dream',
+            'paragraphs' : [
+                'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+                'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+            ],
+            'reverse': True
+        },
+        {
+            'image': "images/man.png",
+            'alt': 'woman and dog',
+            'title': 'From A Dream',
+            'paragraphs' : [
+                'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+                'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+            ],
+            'reverse': False
+
+        },
+    ]
+
+
+
+
     if request.method == 'POST':
         first_name = request.form.get('first_name')
         surname = request.form.get('surname')

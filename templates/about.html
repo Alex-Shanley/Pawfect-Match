@@ -9,6 +9,18 @@
 {% include 'hero.html' %}
 
 
+{% for section in sections%}
+<section class="{{'about-light-rev' if section.reverse else 'about-light'}}">
+  <div class="{{'light-contain-rev if section.reverse else' 'light-contain'}}">
+    <img src="{{url_for('static', filename=section.image)}}" alt="{{section.alt}}" />
+    <div>
+      
+    </div>
+
+  </div>
+
+</section>
+
 <!-- about us first section start -->
 
 <section class="about-light">
