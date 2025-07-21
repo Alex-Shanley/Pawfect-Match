@@ -1251,7 +1251,21 @@ input[type="checkbox"] {
  }
 
 
- 
+ .dog-fact-card {
+  background: #233BA9;
+  color: #ffffff;
+  padding: 2rem;
+  border-radius: 30px;
+  max-width: 300px;
+  text-align: center;
+  font-size: 18px;
+  transition: transform 0.3s ease;
+ }
+
+
+ .dog-fact-card:hover{
+  transform: translateY(-2px);
+ }
 
   /* dog fun facts end */
 
