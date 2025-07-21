@@ -64,6 +64,8 @@ def list_pets():
 def adopt():
     return render_template('adopt.html')
 
+
+
 @app.route('/about', methods=['GET', 'POST'])
 def about():
     sections = [
@@ -103,8 +105,10 @@ def about():
     try:
         response = requests.get("https://dogapi.dog/api/v2/facts?limit=3")
         if response.status_code == 200:
-            dog_facts = response.json().get("facts", [])
-    except Exception:
+            data = response.json()
+            dog_facts = [item['fact'] for item in data.get('data', [])]
+    except Exception as e:
+        print("Error fetching dog facts:", e)
         dog_facts = [
             "All my dogs were named Charlie",
             "Dogs can learn over 1000 words",
@@ -136,6 +140,7 @@ def about():
         sections=sections,
         dog_facts=dog_facts
     )
+
 
 @app.route('/contact', methods=['GET', 'POST'])
 def contact():
