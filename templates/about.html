@@ -9,12 +9,12 @@
 
 {% for section in sections %}
 <section class="{{ 'about-light-rev' if section.reverse else 'about-light' }}">
-
+  
   <div class="{{ 'light-contain-rev' if section.reverse else 'light-contain' }}">
     <img src="{{ url_for('static', filename=section.image) }}" alt="{{ section.alt }}" />
     <div class="{{ 'light-txt-rev' if section.reverse else 'light-txt' }}">
       <h2>{{ section.title }}</h2>
-      {% for paragraph in section.paragraphs %}  <
+      {% for paragraph in section.paragraphs %}  
         <p>{{ paragraph }}</p><br>
       {% endfor %}
       {% if section.button %}
