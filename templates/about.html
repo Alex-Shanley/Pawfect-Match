@@ -13,13 +13,22 @@
 <section class="{{'about-light-rev' if section.reverse else 'about-light'}}">
   <div class="{{'light-contain-rev if section.reverse else' 'light-contain'}}">
     <img src="{{url_for('static', filename=section.image)}}" alt="{{section.alt}}" />
-    <div>
-      
+    <div class="{{'light-txt-rev' if section.reverse else 'light-txt'}}">
+      <h2>{{ section.title}}</h2>
+      {% for paragraph in section.paragraph%}
+      <P>{{ paragraph}}</P><br>
+      {% endfor%}
+      {% if section.button %}
+      <a class="btn" href="{{ section.button.url}}">{{ section.button.text}}</a>
+      {% endif%}
+
     </div>
 
   </div>
 
 </section>
+
+{%endfor%}
 
 <!-- about us first section start -->
 
