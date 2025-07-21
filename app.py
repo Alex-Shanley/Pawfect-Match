@@ -2,6 +2,7 @@ from flask import Flask, render_template, url_for, request, redirect, flash
 from flask_sqlalchemy import SQLAlchemy
 import os
 from dotenv import load_dotenv
+import requests
 
 load_dotenv()
 
@@ -10,7 +11,7 @@ app.secret_key = 'a8f3@9!gks92&x1z'
 
 database_url = os.environ.get('DATABASE_URL', 'sqlite:///test.db')
 if database_url.startswith("postgres://"):
-    database_url = database_url.replace("postgres://", "postgresql://", 1) 
+    database_url = database_url.replace("postgres://", "postgresql://", 1)
 
 app.config['SQLALCHEMY_DATABASE_URI'] = database_url
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
@@ -98,6 +99,18 @@ def about():
         },
     ]
 
+    dog_facts = []
+    try:
+        response = requests.get("https://dog-api.kinduff.com/api/facts?number=3")
+        if response.status_code == 200:
+            dog_facts = response.json().get("facts", [])
+    except Exception as e:
+        dog_facts = [
+            "All my dogs were named Charlie",
+            "Dogs can learn over 1000 words",
+            "They dream just like humans!"
+        ]
+
     if request.method == 'POST':
         first_name = request.form.get('first_name')
         surname = request.form.get('surname')
@@ -113,16 +126,16 @@ def about():
             email=email,
             message=message,
             terms=terms,
-            sections=sections
+            sections=sections,
+            dog_facts=dog_facts
         )
 
- 
     return render_template(
         'about.html',
         form_action=url_for('about'),
-        sections=sections
+        sections=sections,
+        dog_facts=dog_facts
     )
-
 
 @app.route('/contact', methods=['GET', 'POST'])
 def contact():
