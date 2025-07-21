@@ -104,7 +104,7 @@ def about():
         response = requests.get("https://dog-api.kinduff.com/api/facts?number=3")
         if response.status_code == 200:
             dog_facts = response.json().get("facts", [])
-    except Exception as e:
+    except Exception:
         dog_facts = [
             "All my dogs were named Charlie",
             "Dogs can learn over 1000 words",
