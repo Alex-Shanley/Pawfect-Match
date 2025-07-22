@@ -28,3 +28,22 @@ items.forEach(item => {
     parent.classList.toggle('active');
   });
 });
+
+
+
+
+  document.getElementById('contactForm').addEventListener('submit', function(event) {
+  event.preventDefault();  
+
+  confetti ({
+    particleCount: 150,
+    spread:70,
+    origin: {y:0.6}
+
+  });
+
+  setTimeout(() => {
+    event.target.submit();
+  } 1000);
+
+ });
