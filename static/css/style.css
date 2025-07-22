@@ -1286,9 +1286,14 @@ input[type="checkbox"] {
   /* how we work start */
 
   .how-we-work {
-    pad
+    max-width: 100px;
+    margin: auto;
+    padding: 60px 20px;
 
   }
 
+  .subheading { 
+    font-size: 16px;
+    
+  }
 
-  /* how we work end */
