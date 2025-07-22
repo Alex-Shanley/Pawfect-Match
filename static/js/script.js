@@ -44,6 +44,6 @@ items.forEach(item => {
 
   setTimeout(() => {
     event.target.submit();
-  } 1000);
+  }, 1000);
 
  });
