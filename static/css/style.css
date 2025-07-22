@@ -1261,8 +1261,8 @@ input[type="checkbox"] {
     max-width: 500px;
     min-height: 500px; 
     text-align: center;
-    font-weight: bold;
-    font-size: 18px; 
+    
+    font-size: 24px; 
     font-family: 'Poppins', sans-serif;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
     transition: transform 0.3s ease;
