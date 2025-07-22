@@ -1286,7 +1286,7 @@ input[type="checkbox"] {
   /* how we work start */
 
   .how-we-work {
-    max-width: 100px;
+    max-width: 1000px;
     margin: auto;
     padding: 60px 20px;
 
@@ -1294,6 +1294,16 @@ input[type="checkbox"] {
 
   .subheading { 
     font-size: 16px;
-    
+    color: #2c3cd4;
+    margin-bottom: 10px;
   }
+
+
+  .title {
+      font-size: 60px;
+      color: #233BA9;
+      margin-bottom: 16px;
+  }
+
+
 
