@@ -101,7 +101,7 @@ def index():
         terms = request.form.get('terms') == 'on'
         flash('Thank you for contacting us!!')
         return render_template('index.html', form_action=url_for('index'), first_name=first_name, surname=surname, email=email, message=message, terms=terms, steps=steps)
-    return render_template('index.html', form_action=url_for('index'), steps=steps)
+    return render_template('index.html', form_action=url_for('index'), )
 
 @app.route('/pets')
 def list_pets():
