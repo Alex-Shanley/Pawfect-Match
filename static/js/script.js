@@ -32,7 +32,7 @@ items.forEach(item => {
 
 
 
-  document.getElementById('contactForm').addEventListener('submit', function(event) {
+  document.getElementById('contactform').addEventListener('submit', function(event) {
   event.preventDefault();  
 
   confetti ({
