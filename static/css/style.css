@@ -1314,3 +1314,26 @@ input[type="checkbox"] {
 
 
 
+
+
+.step h3 {
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: underline;
+  margin-bottom: 12px;
+}
+
+.step p {
+  font-size: 24px;
+  color: #233BA9;
+  line-height: 1.6;
+}
+
+.paw-print {
+  font-size: 24px;
+  color: #233BA9;
+  margin: 10px 0;
+  animation: bounce 1.5s infinite;
+}
+
+
