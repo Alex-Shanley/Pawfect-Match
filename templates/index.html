@@ -18,26 +18,9 @@
   </div>
 </section>
 
-<section class="how-we-work">
-    <p class="subheading">The Process Is Divided In Three Easy Steps</p>
-    <h2>How we work</h2>
-
-    <div class="steps">
-        {%% for steps in steps}
-        <div class="step">
-            <h3>{{step.title}}</h3>
-            <p>{{step.description}}</p>
-        </div>
-
-        {% if not loop.last%}
-        <div class="paw-print">🐾</div>
-        {% endif%}
-        {%endfor%}
+{% include 'how_we_work.html' %}
 
 
-    </div>
-
-</section>
 
 
  {% include 'stats.html' %}
