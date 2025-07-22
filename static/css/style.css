@@ -1286,7 +1286,7 @@ input[type="checkbox"] {
   /* how we work start */
 
   .how-we-work {
-    max-width: 1000px;
+    
     margin: auto;
     padding: 60px 20px;
 
@@ -1303,6 +1303,13 @@ input[type="checkbox"] {
       font-size: 60px;
       color: #233BA9;
       margin-bottom: 16px;
+  }
+
+  .steps {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
   }
 
 
