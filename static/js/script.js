@@ -36,8 +36,8 @@ items.forEach(item => {
   event.preventDefault();  
 
   confetti ({
-    particleCount: 150,
-    spread:70,
+    particleCount: 350,
+    spread:700,
     origin: {y:0.6}
 
   });
