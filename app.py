@@ -66,6 +66,33 @@ def inject_dog_facts():
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
+    
+    steps = [
+
+        {
+
+            "title": " Reach out to us",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+
+        },
+
+
+         {
+
+            "title": " Find your pet",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+
+        },
+
+
+                 {
+
+            "title": " Have A Meeting",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+
+        }
+    ]
+
     if request.method == 'POST':
         first_name = request.form.get('first_name')
         surname = request.form.get('surname')
@@ -73,7 +100,7 @@ def index():
         message = request.form.get('message')
         terms = request.form.get('terms') == 'on'
         flash('Thank you for contacting us!!')
-        return render_template('index.html', form_action=url_for('index'), first_name=first_name, surname=surname, email=email, message=message, terms=terms)
+        return render_template('index.html', form_action=url_for('index'), first_name=first_name, surname=surname, email=email, message=message, terms=terms, steps=steps)
     return render_template('index.html', form_action=url_for('index'))
 
 @app.route('/pets')
