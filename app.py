@@ -124,8 +124,6 @@ def list_pets():
     if not pets:
         pets = [
             Pet(img='images/Golden-Retriever.png', name='Charlie', age=3, breed='Golden Retriever', species='Dog'),
-            Pet(img='images/Beagle.png', name='Max', age=2, breed='Beagle', species='Dog'),
-            Pet(img='images/Tabby.png', name='Luna', age=1, breed='Tabby', species='Cat'),
         ]
         for pet in pets:
             db.session.add(pet)
