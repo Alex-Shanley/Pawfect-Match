@@ -1315,7 +1315,7 @@ input[type="checkbox"] {
 
 .step-wrapper {
   flex: 1 1 250px;
-  max-width: 300px;
+  max-width: 800px;
   display: flex;
   flex-direction: column;
   align-items: center;
