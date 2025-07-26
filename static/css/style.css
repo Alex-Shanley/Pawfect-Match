@@ -1446,10 +1446,9 @@ input[type="checkbox"] {
 }
 
   /* how we work end */
-
 #custom-pet-filter {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: wrap; 
   justify-content: center;
   align-items: center;
   gap: 1rem;
@@ -1460,7 +1459,8 @@ input[type="checkbox"] {
 }
 
 #custom-pet-filter input,
-#custom-pet-filter select {
+#custom-pet-filter select,
+#custom-pet-filter button {
   flex: 1 1 200px;
   min-width: 180px;
   max-width: 300px;
@@ -1488,28 +1488,11 @@ input[type="checkbox"] {
   font-weight: 600;
 }
 
-.button-group {
-  display: flex;
-  flex-direction: row;
-  gap: 1rem;
-  align-items: center;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-#custom-pet-filter button {
-  border: none;
-  border-radius: 16px;
-  font-size: 1rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.2s ease;
-}
-
 #custom-pet-filter button[type="submit"] {
   background-color: #2d4be2;
   color: white;
-  padding: 0.8rem 2rem;
+  cursor: pointer;
+  transition: 0.2s ease;
 }
 
 #custom-pet-filter button[type="submit"]:hover {
@@ -1519,11 +1502,9 @@ input[type="checkbox"] {
 #clear-filters {
   background: none;
   color: #2d4be2;
-  padding: 0.8rem 1rem;
-  border-radius: 12px;
-  font-weight: bold;
-  text-decoration: none;
   border: 1px solid #2d4be2;
+  font-weight: bold;
+  cursor: pointer;
   transition: 0.2s ease;
 }
 
@@ -1533,17 +1514,11 @@ input[type="checkbox"] {
   border-color: #1f3fc2;
 }
 
-
 @media (max-width: 600px) {
   #custom-pet-filter {
     flex-direction: column;
   }
-
-  .button-group {
-    flex-direction: column;
-  }
 }
-
 
 /* Pet Listing Styles */
 
