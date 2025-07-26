@@ -127,7 +127,7 @@ def list_pets():
         pets_available = [
             Pet(img='images/Golden-Retriever.png', name='Charlie', age=3, breed='Golden Retriever', species='Dog'),
             Pet(img='images/Beagle.png', name='Max', age=2, breed='Beagle', species='Dog'),
-            Pet(img='images/Bulldog.png', name='Rocky', age=5, breed='Bulldog', species='Dog'),
+            Pet(img='images/Bulldogg.png', name='Rocky', age=5, breed='Bulldog', species='Dog'),
             Pet(img='images/Husky.png', name='Ghost', age=4, breed='Siberian Husky', species='Dog'),
             Pet(img='images/Tabby.png', name='Luna', age=1, breed='Tabby', species='Cat'),
             Pet(img='images/Siamese.png', name='Simba', age=3, breed='Siamese', species='Cat'),
