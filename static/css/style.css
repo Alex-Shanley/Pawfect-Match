@@ -1307,12 +1307,12 @@ input[type="checkbox"] {
 
   .steps {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     gap: 20px;
   }
 
-  
+
 .step-wrapper {
   display: flex;
   flex-direction: column;
