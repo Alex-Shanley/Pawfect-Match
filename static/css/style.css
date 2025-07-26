@@ -1323,15 +1323,14 @@ input[type="checkbox"] {
 }
 
 .step h3 {
-  font-size: 24px;
+  font-size: 30px;
   font-weight: bold;
-  
   margin-bottom: 12px;
   color: #233BA9;
 }
 
 .step p {
-  font-size: 16px;
+  font-size: 18px;
   color: #233BA9;
   line-height: 1.6;
   padding: 0 10px;
