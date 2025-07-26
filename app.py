@@ -216,7 +216,7 @@ def list_pets():
 def adopt():
     return render_template('adopt.html')
 
-# About page with multiple sections
+# About page 
 @app.route('/about', methods=['GET', 'POST'])
 def about():
     sections = [
