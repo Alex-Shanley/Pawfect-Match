@@ -11,7 +11,16 @@
 {% include 'hero.html' %}
 
 
-<form method="get" action="{{ url_for('list_pets') }}" id="custom-pet-filter">
+
+
+
+
+
+<section class="pets-list">
+  <h2>Available Pets</h2>
+
+
+  <form method="get" action="{{ url_for('list_pets') }}" id="custom-pet-filter">
     <input type="text" name="name" placeholder="Name" value="{{ name or '' }}">
     <input type="text" name="age" placeholder="Age" value="{{ age or '' }}">
     <input type="text" name="breed" placeholder="Breed" value="{{ breed or '' }}">
@@ -30,8 +39,6 @@
 
 
 
-<section class="pets-list">
-  <h2>Available Pets</h2>
   <div class="pets-container">
     {% if pets %}
       {% for pet in pets %}
