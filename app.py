@@ -20,7 +20,7 @@ app.secret_key = 'a8f3@9!gks92&x1z'
 # -------------------------------
 database_url = os.environ.get('DATABASE_URL', 'sqlite:///test.db')
 if database_url.startswith("postgres://"):
-    # Fix for SQLAlchemy compatibility with Heroku-style URLs
+    
     database_url = database_url.replace("postgres://", "postgresql://", 1)
 
 app.config['SQLALCHEMY_DATABASE_URI'] = database_url
@@ -163,7 +163,7 @@ def list_pets():
         try:
             query = query.filter(Pet.age == int(age))
         except ValueError:
-            flash("Age must be a number", "warning")
+            flash("Age must be a number", "filter")
     if breed:
         query = query.filter(Pet.breed.ilike(f"%{breed}%"))
     if species:
