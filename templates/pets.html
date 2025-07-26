@@ -11,6 +11,27 @@
 {% include 'hero.html' %}
 
 
+
+<section class="pets-list">
+    <h2>Available Pets</h2>
+    <div class="pets-container">
+        {% if pets %}
+            {% for pet in pets %}
+                <div class="pet-card">
+                    <img src="{{ url_for('static', filename=pet.img) }}" alt="{{ pet.name }}" width="200" />
+                    <h3>{{ pet.name }}</h3>
+                    <p><strong>Species:</strong> {{ pet.species }}</p>
+                    <p><strong>Breed:</strong> {{ pet.breed }}</p>
+                    <p><strong>Age:</strong> {{ pet.age }} years old</p>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>No pets available at the moment. Please check back later!</p>
+        {% endif %}
+    </div>
+</section>
+
+
 {% include 'dog-fact.html' %}
 
 
