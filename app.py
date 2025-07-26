@@ -185,9 +185,6 @@ def list_pets():
     )
 
 
-
-
-
 # Adoption information page
 @app.route('/adopt')
 def adopt():
