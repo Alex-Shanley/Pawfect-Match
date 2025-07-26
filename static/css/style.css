@@ -1447,55 +1447,75 @@ input[type="checkbox"] {
 
   /* how we work end */
 
-
-  #custom-pet-filter {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    padding: 1rem;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+#custom-pet-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff7e7; /* Soft cream background */
+  padding: 2rem 1rem;
+  font-family: 'Poppins', sans-serif; /* Optional: match font */
 }
 
 #custom-pet-filter input,
 #custom-pet-filter select {
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 1rem;
+  padding: 16px 24px;
+  font-size: 1rem;
+  border: 2px solid #2d4be2;
+  border-radius: 16px;
+  font-weight: 600;
+  min-width: 180px;
+  color: #2d4be2;
+  background-color: white;
+  outline: none;
+  transition: border 0.2s ease;
 }
 
-#custom-pet-filter button {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    padding: 10px 16px;
-    border-radius: 4px;
-    cursor: pointer;
+#custom-pet-filter input::placeholder,
+#custom-pet-filter select:invalid {
+  color: #d3d3d3;
+  font-weight: bold;
 }
 
-#custom-pet-filter button:hover {
-    background-color: #45a049;
+#custom-pet-filter select {
+  appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='%232d4be2' height='20' viewBox='0 0 24 24' width='20' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 16px;
+}
+
+#custom-pet-filter button[type="submit"] {
+  background-color: #2d4be2;
+  color: white;
+  border: none;
+  border-radius: 16px;
+  padding: 16px 32px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+#custom-pet-filter button[type="submit"]:hover {
+  background-color: #1e37c2;
 }
 
 #clear-filters {
-    display: inline-block;
-    padding: 10px 16px;
-    background-color: #ddd;
-    color: #333;
-    text-decoration: none;
-    border-radius: 4px;
-    margin-left: 10px;
+  background: none;
+  border: none;
+  font-weight: bold;
+  color: #2d4be2;
+  font-size: 1.1rem;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 0 8px;
 }
 
 #clear-filters:hover {
-    background-color: #bbb;
+  color: #1e37c2;
 }
-
-
-
-/* Pet Listing Styles */
 /* Pet Listing Styles */
 
 .pets-list {
