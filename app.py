@@ -120,6 +120,28 @@ def index():
 # Pets listing page
 @app.route('/pets')
 def list_pets():
+    name = request.arg.get('name,' '').strip()
+    age = request.arg.get('age,' '').strip()
+    breed = request.arg.get('breed,' '').strip()
+    species = request.arg.get('name,' '').strip()
+
+    query = Pet.query 
+
+    if name: 
+        query = query.filter(Pet.name.ilike(f"%{name}%"))
+    if age: 
+        try:
+            query = query.filter(Pet.age ==int(age))
+        except ValueError:
+            flash ("Age must be a number","warning")
+
+    if breed: 
+        query = query.filter(Pet.breed.ilike(f"%{breed}%"))
+    if species: 
+        query = query.filter(Pet.species.ilike(f"%{species}%"))
+        
+
+
     pets = Pet.query.all()
 
     if not pets:
