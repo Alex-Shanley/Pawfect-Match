@@ -126,32 +126,32 @@ def list_pets():
         pets_available = [
             # Dogs
             Pet(img='images/Golden-Retriever.png', name='Charlie', age=3, breed='Golden Retriever', species='Dog'),
-            Pet(img='images/Beagle.png', name='Max', age=2, breed='Beagle', species='Dog'),
-            Pet(img='images/Bulldog.png', name='Rocky', age=5, breed='Bulldog', species='Dog'),
-            Pet(img='images/Husky.png', name='Ghost', age=4, breed='Siberian Husky', species='Dog'),
+            Pet(img='images/Golden-Retriever.png', name='Max', age=2, breed='Beagle', species='Dog'),
+            Pet(img='images/Golden-Retriever.png', name='Rocky', age=5, breed='Bulldog', species='Dog'),
+            Pet(img='images/Golden-Retriever.png', name='Ghost', age=4, breed='Siberian Husky', species='Dog'),
 
             # Cats
-            Pet(img='images/Tabby.png', name='Luna', age=1, breed='Tabby', species='Cat'),
-            Pet(img='images/Siamese.png', name='Simba', age=3, breed='Siamese', species='Cat'),
-            Pet(img='images/Persian.png', name='Nala', age=4, breed='Persian', species='Cat'),
-            Pet(img='images/Bengal.png', name='Tiger', age=2, breed='Bengal', species='Cat'),
+            Pet(img='images/Golden-Retriever.png', name='Luna', age=1, breed='Tabby', species='Cat'),
+            Pet(img='images/Golden-Retriever.png', name='Simba', age=3, breed='Siamese', species='Cat'),
+            Pet(img='images/Golden-Retriever.png', name='Nala', age=4, breed='Persian', species='Cat'),
+            Pet(img='images/Golden-Retriever.png', name='Tiger', age=2, breed='Bengal', species='Cat'),
 
             # Rabbits
-            Pet(img='images/Bunny-Lop.png', name='Hazel', age=1, breed='Lop', species='Rabbit'),
-            Pet(img='images/Bunny-Rex.png', name='Cinnamon', age=2, breed='Rex', species='Rabbit'),
-            Pet(img='images/Bunny-Angora.png', name='Snowflake', age=2, breed='Angora', species='Rabbit'),
+            Pet(img='images/Golden-Retriever.png', name='Hazel', age=1, breed='Lop', species='Rabbit'),
+            Pet(img='images/Golden-Retriever.png', name='Cinnamon', age=2, breed='Rex', species='Rabbit'),
+            Pet(img='images/Golden-Retriever.png', name='Snowflake', age=2, breed='Angora', species='Rabbit'),
 
             # Birds
-            Pet(img='images/Bird-Macaw.png', name='Skye', age=2, breed='Macaw', species='Bird'),
-            Pet(img='images/Bird-Cockatiel.png', name='Sunny', age=1, breed='Cockatiel', species='Bird'),
-            Pet(img='images/Bird-Parakeet.png', name='Kiwi', age=2, breed='Parakeet', species='Bird'),
+            Pet(img='images/Golden-Retriever.png', name='Skye', age=2, breed='Macaw', species='Bird'),
+            Pet(img='images/Golden-Retriever.png', name='Sunny', age=1, breed='Cockatiel', species='Bird'),
+            Pet(img='images/Golden-Retriever.png', name='Kiwi', age=2, breed='Parakeet', species='Bird'),
 
             # Reptiles
-            Pet(img='images/Gecko.png', name='Leo', age=1, breed='Leopard Gecko', species='Reptile'),
-            Pet(img='images/Bearded-Dragon.png', name='Spike', age=3, breed='Bearded Dragon', species='Reptile'),
-            Pet(img='images/Snake-Corn.png', name='Slyther', age=2, breed='Corn Snake', species='Reptile'),
-            Pet(img='images/Turtle-Box.png', name='Shelly', age=4, breed='Box Turtle', species='Reptile'),
-            Pet(img='images/Chameleon.png', name='Echo', age=2, breed='Veiled Chameleon', species='Reptile'),
+            Pet(img='images/Golden-Retriever.png', name='Leo', age=1, breed='Leopard Gecko', species='Reptile'),
+            Pet(img='images/Golden-Retriever.png', name='Spike', age=3, breed='Bearded Dragon', species='Reptile'),
+            Pet(img='images/Golden-Retriever.png', name='Slyther', age=2, breed='Corn Snake', species='Reptile'),
+            Pet(img='images/Golden-Retriever.png', name='Shelly', age=4, breed='Box Turtle', species='Reptile'),
+            Pet(img='images/Golden-Retriever.png', name='Echo', age=2, breed='Veiled Chameleon', species='Reptile'),
         ]
 
         for pet in pets_available:
