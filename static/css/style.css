@@ -1446,3 +1446,49 @@ input[type="checkbox"] {
 }
 
   /* how we work end */
+
+
+  #custom-pet-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 1rem;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+#custom-pet-filter input,
+#custom-pet-filter select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+#custom-pet-filter button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#custom-pet-filter button:hover {
+    background-color: #45a049;
+}
+
+#clear-filters {
+    display: inline-block;
+    padding: 10px 16px;
+    background-color: #ddd;
+    color: #333;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-left: 10px;
+}
+
+#clear-filters:hover {
+    background-color: #bbb;
+}

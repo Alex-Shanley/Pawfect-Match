@@ -10,24 +10,22 @@
 {% set title = "Pets" %}
 {% include 'hero.html' %}
 
-<div class="pet-filter-box">
-    <form method="get" action="{{ url_for('list_pets') }}" class="pet-filters">
-        <input type="text" name="name" placeholder="Name" value="{{ name or '' }}">
-        <input type="text" name="age" placeholder="Age" value="{{ age or '' }}">
-        <input type="text" name="breed" placeholder="Breed" value="{{ breed or '' }}">
-        
-        <select name="species">
-            <option value="">All Species</option>
-            {% for option in species_options %}
-                <option value="{{ option }}" {% if selected_species == option %}selected{% endif %}>{{ option }}</option>
-            {% endfor %}
-        </select>
 
-        <button type="submit">Filter</button>
-        <a href="{{ url_for('list_pets') }}" class="clear-filters-button">Clear Filters</a>
-    </form>
-</div>
+<form method="get" action="{{ url_for('list_pets') }}" id="custom-pet-filter">
+    <input type="text" name="name" placeholder="Name" value="{{ name or '' }}">
+    <input type="text" name="age" placeholder="Age" value="{{ age or '' }}">
+    <input type="text" name="breed" placeholder="Breed" value="{{ breed or '' }}">
 
+    <select name="species">
+        <option value="">All Species</option>
+        {% for option in species_options %}
+            <option value="{{ option }}" {% if selected_species == option %}selected{% endif %}>{{ option }}</option>
+        {% endfor %}
+    </select>
+
+    <button type="submit">Filter</button>
+    <a href="{{ url_for('list_pets') }}" id="clear-filters">Clear Filters</a>
+</form>
 
 
 
