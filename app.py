@@ -118,33 +118,33 @@ def index():
     return render_template('index.html', steps=steps, form_action=url_for('index'))
 
 # Pets listing page
+from flask import request, render_template, flash
+
 @app.route('/pets')
 def list_pets():
-    name = request.arg.get('name,' '').strip()
-    age = request.arg.get('age,' '').strip()
-    breed = request.arg.get('breed,' '').strip()
-    species = request.arg.get('name,' '').strip()
+    name = request.args.get('name', '').strip()
+    age = request.args.get('age', '').strip()
+    breed = request.args.get('breed', '').strip()
+    species = request.args.get('species', '').strip()
 
-    query = Pet.query 
+    query = Pet.query
 
-    if name: 
+    if name:
         query = query.filter(Pet.name.ilike(f"%{name}%"))
-    if age: 
+    if age:
         try:
-            query = query.filter(Pet.age ==int(age))
+            query = query.filter(Pet.age == int(age))
         except ValueError:
-            flash ("Age must be a number","warning")
-
-    if breed: 
+            flash("Age must be a number", "warning")
+    if breed:
         query = query.filter(Pet.breed.ilike(f"%{breed}%"))
-    if species: 
+    if species:
         query = query.filter(Pet.species.ilike(f"%{species}%"))
-        
 
+    pets = query.all()
 
-    pets = Pet.query.all()
-
-    if not pets:
+  
+    if Pet.query.count() == 0:
         pets_available = [
             # Dogs
             Pet(img='images/Golden-Retriever.png', name='Charlie', age=3, breed='Golden Retriever', species='Dog'),
@@ -179,9 +179,11 @@ def list_pets():
         for pet in pets_available:
             db.session.add(pet)
         db.session.commit()
+
         pets = Pet.query.all()
 
     return render_template('pets.html', pets=pets)
+
 
 
 # Adoption information page
