@@ -106,7 +106,19 @@ def index():
         }
     ]
 
-
+def list_pets():
+    
+    if Pet.query.count() == 0:
+        pets_available = [
+            Pet(img='images/Golden-Retriever.png', name='Charlie', age=3, breed='Golden Retriever', species='Dog'),
+            Pet(img='images/Lop.png', name='Hazel', age=1, breed='Lop', species='Rabbit'),
+            Pet(img='images/Macaw.png', name='Skye', age=2, breed='Macaw', species='Bird'),
+            Pet(img='images/VeiledChameleon.png', name='Echo', age=2, breed='Veiled Chameleon', species='Reptile'),
+        ]
+        
+        for pet in pets_available:
+            db.session.add(pet)
+        db.session.commit()
 
     if request.method == 'POST':
         first_name = request.form.get('first_name')
