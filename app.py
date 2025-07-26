@@ -223,21 +223,22 @@ def faq():
 
 @app.route('/available_pets')
 def available_pets():
-    if Pet.query.count() > 0:
-        return "Pet already added!"
+    
+    Pet.query.delete()
+    db.session.commit()
+
     
     pets = [
         Pet(img='images/Golden-Retriever.png', name='Charlie', age=3, breed='Golden Retriever', species='Dog'),
         Pet(img='images/Beagle.png', name='Max', age=2, breed='Beagle', species='Dog'),
-        Pet(img='images/Beagle.png', name='Max', age=2, breed='Beagle', species='Dog'),
-    
+        Pet(img='images/Tabby.png', name='Luna', age=1, breed='Tabby', species='Cat'),
     ]
-    
+
     for pet in pets:
         db.session.add(pet)
     db.session.commit()
-    
-    return "Pet added!"
+
+    return "Pets reset and added!"
 
 
 # -------------------------------
