@@ -122,7 +122,7 @@ from sqlalchemy import distinct
 
 @app.route('/pets')
 def list_pets():
-    # Seed database if empty
+    
     if Pet.query.count() == 0:
         pets_available = [
             Pet(img='images/Golden-Retriever.png', name='Charlie', age=3, breed='Golden Retriever', species='Dog'),
@@ -149,13 +149,13 @@ def list_pets():
             db.session.add(pet)
         db.session.commit()
 
-    # Get query parameters once
+    
     name = request.args.get('name', '').strip()
     age = request.args.get('age', '').strip()
     breed = request.args.get('breed', '').strip()
     species = request.args.get('species', '').strip()
 
-    # Build query with filters
+    
     query = Pet.query
     if name:
         query = query.filter(Pet.name.ilike(f"%{name}%"))
@@ -171,7 +171,7 @@ def list_pets():
 
     pets = query.all()
 
-    # Get distinct species for filter options
+    
     species_options = [row[0] for row in db.session.query(distinct(Pet.species)).all()]
 
     return render_template(
