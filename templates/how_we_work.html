@@ -1,20 +1,22 @@
 <section class="how-we-work">
-    <p class="subheading">The Process Is Divided In Three Easy Steps</p>
-    <h2>How we work</h2>
+  <p class="subheading">The Process Is Divided In Three Easy Steps</p>
+  <h2 class="title">How It Works</h2>
 
-    <div class="steps">
-        {% for step in steps %}
-        <div class="step">
-            <h3>{{ step.title }}</h3>
-            <p>{{ step.description }}</p>
-        </div>
-
-        {% if not loop.last %}
-        <div class="paw-print">🐾</div>
-        {% endif %}
-        {% endfor %}
-
-
+  <div class="steps">
+    {% for step in steps %}
+    <div class="step-wrapper">
+      <div class="step">
+        <h3>{{ step.title }}</h3>
+        <p>{{ step.description }}</p>
+      </div>
+      {% if not loop.last %}
+      <div class="paw-print">🐾</div>
+      {% endif %}
     </div>
+    {% endfor %}
+  </div>
 
+  <div class="more-info">
+    <button>More Info</button>
+  </div>
 </section>
