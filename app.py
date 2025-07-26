@@ -228,6 +228,9 @@ def available_pets():
     
     pets = [
         Pet(img='images/Golden-Retriever.png', name='Charlie', age=3, breed='Golden Retriever', species='Dog'),
+        Pet(img='images/Beagle.png', name='Max', age=2, breed='Beagle', species='Dog'),
+        Pet(img='images/Beagle.png', name='Max', age=2, breed='Beagle', species='Dog'),
+    
     ]
     
     for pet in pets:
