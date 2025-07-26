@@ -121,14 +121,16 @@ def index():
 @app.route('/pets')
 def list_pets():
     pets = Pet.query.all()
+
     if not pets:
-        pets = [
+        default_pets = [
             Pet(img='images/Golden-Retriever.png', name='Charlie', age=3, breed='Golden Retriever', species='Dog'),
         ]
-        for pet in pets:
+        for pet in default_pets:
             db.session.add(pet)
         db.session.commit()
         pets = Pet.query.all()
+
     return render_template('pets.html', pets=pets)
 
 # Adoption information page
