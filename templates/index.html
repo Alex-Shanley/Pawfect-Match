@@ -27,32 +27,6 @@
 
  {% include 'how_we_work.html' %}
 
- <section class="how-we-work">
-  <p class="subheading">The Process Is Divided In Three Easy Steps</p>
-  <h2 class="title">Featured pets</h2>
-
-  <div class="pets-container">
-    {% if pets %}
-      {% for pet in pets %}
-        <div class="pet-card">
-          <img src="{{ url_for('static', filename=pet.img) }}" alt="{{ pet.name }}" />
-          <div class="card-content">
-            <p class="species">{{ pet.species | upper }}</p>
-            <h3>{{ pet.name }}</h3>
-            <p><strong>Breed:</strong> {{ pet.breed }}</p>
-            <p><strong>Age:</strong> {{ pet.age }} years old</p>
-          </div>
-        </div>
-      {% endfor %}
-    {% else %}
-      <p>No pets available at the moment. Please check back later!</p>
-    {% endif %}
-  </div>
-
-  <div class="more-info">
-    <a href="{{ url_for('pets') }}"><button>More Info</button></a>
-  </div>
-</section>
 
 
 
