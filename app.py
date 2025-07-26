@@ -139,7 +139,7 @@ def list_pets():
     if breed:
         query = query.filter(Pet.breed.ilike(f"%{breed}%"))
     if species:
-        query = query.filter(Pet.species.ilike(f"%{species}%"))
+        query = query.filter(Pet.species == species)
 
     pets = query.all()
 
