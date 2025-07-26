@@ -1362,57 +1362,56 @@ input[type="checkbox"] {
 
 
 
-@media (max-width: 1024px) {
-  .how-it-works {
-    padding: 0 20px;
-    gap: 30px;
+@media (max-width: 992px) {
+  .title {
+    font-size: 48px;
   }
-  
-  .how-step {
-    flex: 1 1 45%;
-    padding: 25px 20px;
+  .step p {
+    font-size: 20px;
+    padding: 0 8px;
   }
-  
-  .how-step-title {
-    font-size: 24px;
-  }
-  
-  .how-step-description {
-    font-size: 16px;
-  }
-}
-
-@media (max-width: 768px) {
-  .how-it-works {
-    flex-direction: column;
-    padding: 0 15px;
-    gap: 25px;
-  }
-  
-  .how-step {
-    flex: 1 1 100%;
-    padding: 20px 15px;
-  }
-  
-  .how-step-title {
-    font-size: 22px;
-  }
-  
-  .how-step-description {
-    font-size: 15px;
-  }
-}
-
-@media (max-width: 480px) {
-  .how-step-icon {
+  .paw-print {
     font-size: 40px;
   }
-  
-  .how-step-title {
+  .more-info button {
     font-size: 20px;
+    padding: 10px 20px;
   }
-  
-  .how-step-description {
-    font-size: 14px;
+}
+
+
+@media (max-width: 600px) {
+  .how-we-work {
+    padding: 80px 15px;
+  }
+  .title {
+    font-size: 36px;
+  }
+  .steps {
+    flex-direction: column;
+    gap: 40px;
+    margin-top: 20px;
+  }
+  .step-wrapper {
+    max-width: 100%;
+    padding: 0 10px;
+  }
+  .step h3 {
+    font-size: 24px;
+  }
+  .step p {
+    font-size: 18px;
+    padding: 0 5px;
+  }
+  .paw-print {
+    font-size: 30px;
+    margin: 0 5px;
+  }
+  .more-info {
+    margin-top: 30px;
+  }
+  .more-info button {
+    font-size: 18px;
+    padding: 10px 16px;
   }
 }
