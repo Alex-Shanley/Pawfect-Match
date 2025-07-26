@@ -106,7 +106,7 @@ def index():
         }
     ]
 
-    pets = get_all_pets()[:4]
+    pets = pets[:4]
 
     if request.method == 'POST':
         first_name = request.form.get('first_name')
