@@ -1445,10 +1445,9 @@ input[type="checkbox"] {
   }
 }
 
-  /* how we work end */
-#custom-pet-filter {
+ #custom-pet-filter {
   display: flex;
-  flex-wrap: wrap; 
+  flex-wrap: nowrap; 
   justify-content: center;
   align-items: center;
   gap: 1rem;
@@ -1456,14 +1455,16 @@ input[type="checkbox"] {
   width: 90%;
   max-width: 1000px;
   margin: 0 auto;
+  overflow-x: auto; 
 }
 
 #custom-pet-filter input,
 #custom-pet-filter select,
-#custom-pet-filter button {
-  flex: 1 1 200px;
-  min-width: 180px;
-  max-width: 300px;
+#custom-pet-filter button,
+#clear-filters {
+  flex: 0 0 auto; 
+  min-width: 120px; 
+  max-width: 180px; 
   padding: 1rem 1.5rem;
   font-size: 1rem;
   font-weight: 600;
@@ -1472,6 +1473,11 @@ input[type="checkbox"] {
   color: #2d4be2;
   background-color: white;
   outline: none;
+  text-align: center;
+  text-decoration: none; 
+  display: inline-flex; 
+  justify-content: center;
+  align-items: center;
 }
 
 #custom-pet-filter input::placeholder {
@@ -1516,9 +1522,17 @@ input[type="checkbox"] {
 
 @media (max-width: 600px) {
   #custom-pet-filter {
-    flex-direction: column;
+    flex-wrap: wrap; 
+  }
+  #custom-pet-filter input,
+  #custom-pet-filter select,
+  #custom-pet-filter button,
+  #clear-filters {
+    flex: 1 1 100%;
+    max-width: 100%;
   }
 }
+
 
 /* Pet Listing Styles */
 
