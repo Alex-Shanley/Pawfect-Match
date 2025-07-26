@@ -121,6 +121,16 @@ def index():
 @app.route('/pets')
 def list_pets():
     pets = Pet.query.all()
+    if not pets:
+        pets = [
+            Pet(img='images/Golden-Retriever.png', name='Charlie', age=3, breed='Golden Retriever', species='Dog'),
+            Pet(img='images/Beagle.png', name='Max', age=2, breed='Beagle', species='Dog'),
+            Pet(img='images/Tabby.png', name='Luna', age=1, breed='Tabby', species='Cat'),
+        ]
+        for pet in pets:
+            db.session.add(pet)
+        db.session.commit()
+        pets = Pet.query.all()
     return render_template('pets.html', pets=pets)
 
 # Adoption information page
@@ -220,25 +230,6 @@ def faq():
         return render_template('faq.html', form_action=url_for('faq'), first_name=first_name, surname=surname, email=email, message=message, terms=terms)
     return render_template('faq.html', form_action=url_for('faq'))
 
-
-@app.route('/available_pets')
-def available_pets():
-    
-    Pet.query.delete()
-    db.session.commit()
-
-    
-    pets = [
-        Pet(img='images/Golden-Retriever.png', name='Charlie', age=3, breed='Golden Retriever', species='Dog'),
-        Pet(img='images/Beagle.png', name='Max', age=2, breed='Beagle', species='Dog'),
-        Pet(img='images/Tabby.png', name='Luna', age=1, breed='Tabby', species='Cat'),
-    ]
-
-    for pet in pets:
-        db.session.add(pet)
-    db.session.commit()
-
-    return "Pets reset and added!"
 
 
 # -------------------------------
