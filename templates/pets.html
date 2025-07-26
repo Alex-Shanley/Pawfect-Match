@@ -10,12 +10,11 @@
 {% set title = "Pets" %}
 {% include 'hero.html' %}
 
-
 <form method="get" action="{{ url_for('list_pets') }}" class="pet-filters">
-    <input type="text" name="name" placeholder="Name" value="{{ name or '' }}">
-    <input type="text" name="age" placeholder="Age" value="{{ age or '' }}">
-    <input type="text" name="breed" placeholder="Breed" value="{{ breed or '' }}">
-    
+    <input type="text" name="name" placeholder="Name" value="{{ name }}">
+    <input type="text" name="age" placeholder="Age" value="{{ age }}">
+    <input type="text" name="breed" placeholder="Breed" value="{{ breed }}">
+
     <select name="species">
         <option value="">All Species</option>
         {% for option in species_options %}
@@ -24,6 +23,7 @@
     </select>
 
     <button type="submit">Filter</button>
+    <a href="{{ url_for('list_pets') }}" class="clear-filters-button">Clear Filters</a>
 </form>
 
 
