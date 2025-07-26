@@ -106,8 +106,7 @@ def index():
         }
     ]
 
-    
-    four_pets = Pet.query.limit(4).all()
+
 
     if request.method == 'POST':
         first_name = request.form.get('first_name')
@@ -116,24 +115,9 @@ def index():
         message = request.form.get('message')
         terms = request.form.get('terms') == 'on'
         flash('Thank you for contacting us!!')
-        return render_template(
-            'index.html',
-            form_action=url_for('index'),
-            first_name=first_name,
-            surname=surname,
-            email=email,
-            message=message,
-            terms=terms,
-            steps=steps,
-            pets=four_pets
-        )
+        return render_template('index.html', form_action=url_for('index'), first_name=first_name, surname=surname, email=email, message=message, terms=terms, steps=steps,)
     
-    return render_template(
-        'index.html',
-        steps=steps,
-        form_action=url_for('index'),
-        pets=four_pets
-    )
+    return render_template('index.html', steps=steps, form_action=url_for('index'))
 
 
 # Pets listing page
