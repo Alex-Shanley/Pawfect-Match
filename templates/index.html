@@ -28,58 +28,56 @@
  {% include 'how_we_work.html' %}
 
 
-   <section class="pets-list">
+<section class="pets-list">
   <h2>Featured Pets</h2>
-</section>
 
- <div class="pets-container">
+  <div class="pets-container">
+    <div class="pet-card">
+      <img src="{{ url_for('static', filename='images/Golden-Retriever.png') }}" alt="Charlie" />
+      <div class="card-content">
+        <p class="species">DOG</p>
+        <h3>Charlie</h3>
+        <p><strong>Breed:</strong> Golden Retriever</p>
+        <p><strong>Age:</strong> 3 years old</p>
+      </div>
+    </div>
 
+    <div class="pet-card">
+      <img src="{{ url_for('static', filename='images/Husky.png') }}" alt="Ghost" />
+      <div class="card-content">
+        <p class="species">DOG</p>
+        <h3>Ghost</h3>
+        <p><strong>Breed:</strong> Siberian Husky</p>
+        <p><strong>Age:</strong> 4 years old</p>
+      </div>
+    </div>
 
-<div class="pet-card">
-  <img src="{{ url_for('static', filename='images/Golden-Retriever.png') }}" alt="Charlie" />
-  <div class="card-content">
-    <p class="species">DOG</p>
-    <h3>Charlie</h3>
-    <p><strong>Breed:</strong> Golden Retriever</p>
-    <p><strong>Age:</strong> 3 years old</p>
+    <div class="pet-card">
+      <img src="{{ url_for('static', filename='images/LeopardGecko.png') }}" alt="Leo" />
+      <div class="card-content">
+        <p class="species">REPTILE</p>
+        <h3>Leo</h3>
+        <p><strong>Breed:</strong> Leopard Gecko</p>
+        <p><strong>Age:</strong> 1 year old</p>
+      </div>
+    </div>
+
+    <div class="pet-card">
+      <img src="{{ url_for('static', filename='images/Macaw.png') }}" alt="Skye" />
+      <div class="card-content">
+        <p class="species">BIRD</p>
+        <h3>Skye</h3>
+        <p><strong>Breed:</strong> Macaw</p>
+        <p><strong>Age:</strong> 2 years old</p>
+      </div>
+    </div>
   </div>
-</div>
-
-<div class="pet-card">
-  <img src="{{ url_for('static', filename='images/Husky.png') }}" alt="Ghost" />
-  <div class="card-content">
-    <p class="species">DOG</p>
-    <h3>Ghost</h3>
-    <p><strong>Breed:</strong> Siberian Husky</p>
-    <p><strong>Age:</strong> 4 years old</p>
-  </div>
-</div>
-
-<div class="pet-card">
-  <img src="{{ url_for('static', filename='images/LeopardGecko.png') }}" alt="Leo" />
-  <div class="card-content">
-    <p class="species">REPTILE</p>
-    <h3>Leo</h3>
-    <p><strong>Breed:</strong> Leopard Gecko</p>
-    <p><strong>Age:</strong> 1 year old</p>
-  </div>
-</div>
-
-<div class="pet-card">
-  <img src="{{ url_for('static', filename='images/Macaw.png') }}" alt="Skye" />
-  <div class="card-content">
-    <p class="species">BIRD</p>
-    <h3>Skye</h3>
-    <p><strong>Breed:</strong> Macaw</p>
-    <p><strong>Age:</strong> 2 years old</p>
-  </div>
-</div>
-
- </div>
 
   <div class="more-info">
     <a href="{{ url_for('pets') }}"><button>See all</button></a>
   </div>
+</section>
+
 
 
 
