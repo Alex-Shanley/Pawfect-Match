@@ -1361,13 +1361,58 @@ input[type="checkbox"] {
 }
 
 
-@media (max-width: 768px) {
-  .steps {
-    flex-direction: column;
-  }
 
-  .paw-print {
-    transform: rotate(90deg);
-    margin: 20px 0;
+@media (max-width: 1024px) {
+  .how-it-works {
+    padding: 0 20px;
+    gap: 30px;
+  }
+  
+  .how-step {
+    flex: 1 1 45%;
+    padding: 25px 20px;
+  }
+  
+  .how-step-title {
+    font-size: 24px;
+  }
+  
+  .how-step-description {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .how-it-works {
+    flex-direction: column;
+    padding: 0 15px;
+    gap: 25px;
+  }
+  
+  .how-step {
+    flex: 1 1 100%;
+    padding: 20px 15px;
+  }
+  
+  .how-step-title {
+    font-size: 22px;
+  }
+  
+  .how-step-description {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .how-step-icon {
+    font-size: 40px;
+  }
+  
+  .how-step-title {
+    font-size: 20px;
+  }
+  
+  .how-step-description {
+    font-size: 14px;
   }
 }
