@@ -10,46 +10,44 @@
 {% set title = "Pets" %}
 {% include 'hero.html' %}
 
-
-<form method="get" action="{{ url_for('list_pets') }}" id="custom-pet-filter">
+  <!-- Filter Form -->
+  <form method="get" action="{{ url_for('list_pets') }}" id="custom-pet-filter">
     <input type="text" name="name" placeholder="Name" value="{{ name or '' }}">
     <input type="text" name="age" placeholder="Age" value="{{ age or '' }}">
     <input type="text" name="breed" placeholder="Breed" value="{{ breed or '' }}">
 
     <select name="species">
-        <option value="">All Species</option>
-        {% for option in species_options %}
-            <option value="{{ option }}" {% if selected_species == option %}selected{% endif %}>{{ option }}</option>
-        {% endfor %}
+      <option value="">Species</option>
+      {% for option in species_options %}
+        <option value="{{ option }}" {% if selected_species == option %}selected{% endif %}>{{ option }}</option>
+      {% endfor %}
     </select>
 
     <button type="submit">Filter</button>
-    <a href="{{ url_for('list_pets') }}" id="clear-filters">Clear Filters</a>
-</form>
+    <a href="{{ url_for('list_pets') }}" id="clear-filters">Clear</a>
+  </form>
 
-
-
-
-<section class="pets-list">
-  <h2>Available Pets</h2>
-  <div class="pets-container">
-    {% if pets %}
-      {% for pet in pets %}
-        <div class="pet-card">
-          <img src="{{ url_for('static', filename=pet.img) }}" alt="{{ pet.name }}" />
-          <div class="card-content">
-            <p class="species">{{ pet.species | upper }}</p>
-            <h3>{{ pet.name }}</h3>
-            <p><strong>Breed:</strong> {{ pet.breed }}</p>
-            <p><strong>Age:</strong> {{ pet.age }} years old</p>
+  <!-- Pets List -->
+  <section class="pets-list">
+    <h2>Available Pets</h2>
+    <div class="pets-container">
+      {% if pets %}
+        {% for pet in pets %}
+          <div class="pet-card">
+            <img src="{{ url_for('static', filename=pet.img) }}" alt="{{ pet.name }}">
+            <div class="card-content">
+              <p class="species">{{ pet.species | upper }}</p>
+              <h3>{{ pet.name }}</h3>
+              <p><strong>Breed:</strong> {{ pet.breed }}</p>
+              <p><strong>Age:</strong> {{ pet.age }} years old</p>
+            </div>
           </div>
-        </div>
-      {% endfor %}
-    {% else %}
-      <p>No pets available at the moment. Please check back later!</p>
-    {% endif %}
-  </div>
-</section>
+        {% endfor %}
+      {% else %}
+        <p style="text-align: center;">No pets available at the moment. Please check back later!</p>
+      {% endif %}
+    </div>
+  </section>
 
 
 {% include 'dog-fact.html' %}
