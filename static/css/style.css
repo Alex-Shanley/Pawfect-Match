@@ -1289,8 +1289,8 @@ input[type="checkbox"] {
   margin: auto;
   padding: 60px 20px;
   text-align: center;
-  background-color: #fffaf0;
-  font-family: Arial, sans-serif;
+  
+  
 }
 
 .subheading {
@@ -1323,18 +1323,19 @@ input[type="checkbox"] {
 }
 
 .step h3 {
-  font-size: 20px;
+  font-size: 24px;
   font-weight: bold;
-  text-decoration: underline;
+  
   margin-bottom: 12px;
   color: #233BA9;
 }
 
 .step p {
   font-size: 16px;
-  color: #6a6a8e;
+  color: #233BA9;
   line-height: 1.6;
   padding: 0 10px;
+  font-size: 18px;
 }
 
 .paw-print {
