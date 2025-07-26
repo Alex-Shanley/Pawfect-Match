@@ -1395,7 +1395,8 @@ input[type="checkbox"] {
   .step-wrapper {
     max-width: 100%;
     padding: 0 10px;
-    margin-bottom: 0px;
+    flex: none;
+    width: 100%;
   }
   .step h3 {
     font-size: 24px;
