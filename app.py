@@ -143,7 +143,9 @@ def list_pets():
 
     pets = query.all()
 
-  
+@app.route('/pets')
+def list_pets():
+   
     if Pet.query.count() == 0:
         pets_available = [
             # Dogs
@@ -175,14 +177,37 @@ def list_pets():
             Pet(img='images/Golden-Retriever.png', name='Shelly', age=4, breed='Box Turtle', species='Reptile'),
             Pet(img='images/Golden-Retriever.png', name='Echo', age=2, breed='Veiled Chameleon', species='Reptile'),
         ]
-
         for pet in pets_available:
             db.session.add(pet)
         db.session.commit()
 
-        pets = Pet.query.all()
+   
+    name = request.args.get('name', '').strip()
+    age = request.args.get('age', '').strip()
+    breed = request.args.get('breed', '').strip()
+    species = request.args.get('species', '').strip()
 
-    return render_template('pets.html', pets=pets)
+    
+    query = Pet.query
+    if name:
+        query = query.filter(Pet.name.ilike(f"%{name}%"))
+    if age:
+        try:
+            query = query.filter(Pet.age == int(age))
+        except ValueError:
+            flash("Age must be a number", "warning")
+    if breed:
+        query = query.filter(Pet.breed.ilike(f"%{breed}%"))
+    if species:
+        query = query.filter(Pet.species == species)
+
+    pets = query.all()
+
+   
+    species_options = [row[0] for row in db.session.query(distinct(Pet.species)).all()]
+
+    return render_template('pets.html', pets=pets, name=name, age=age, breed=breed, selected_species=species,species_options=species_options)
+
 
 
 
