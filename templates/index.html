@@ -27,6 +27,21 @@
 
  {% include 'how_we_work.html' %}
 
+<div class="pets-preview">
+  <h2>Featured Pets</h2>
+  <div class="pet-list">
+    {% for pet in pets %}
+      <div class="pet-card">
+        <img src="{{ url_for('static', filename=pet.img) }}" alt="{{ pet.name }}">
+        <h3>{{ pet.name }}</h3>
+        <p>Age: {{ pet.age }}</p>
+        <p>Breed: {{ pet.breed }}</p>
+        <p>Species: {{ pet.species }}</p>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
 
 
 
