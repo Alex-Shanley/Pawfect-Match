@@ -1535,7 +1535,7 @@ input[type="checkbox"] {
 
 .pet-card img {
   width: 100%;
-  height: 220px;
+  height: 400px;
   object-fit: cover;
 }
 
@@ -1561,7 +1561,7 @@ input[type="checkbox"] {
 
 .card-content p {
   font-size: 16px;
-  color: #3a3a3a;
+  color: #233BA9;
   margin-bottom: 8px;
   line-height: 1.4;
 }
@@ -1571,7 +1571,7 @@ input[type="checkbox"] {
   padding: 10px 0 0;
   margin: 0;
   font-size: 14px;
-  color: #555;
+  color: #233BA9;
 }
 
 .traits li::before {
