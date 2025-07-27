@@ -206,9 +206,33 @@ def list_pets():
         species_options=species_options
     )
 
-@app.route('/add', methods=['GET'])
+@app.route('/add', methods=['GET', 'POST'])
 def add():
+    if request.method == 'POST':
+        img = request.form.get('img')
+        name = request.form.get('name')
+        age = request.form.get('age')
+        breed = request.form.get('breed')
+        species = request.form.get('species')
+
+        if not name or not age or not breed or not species:
+            flash("Please fill in all required fields!", "error")
+            return redirect(url_for('add'))
+
+        try:
+            age = int(age)
+        except ValueError:
+            flash("Age must be a number", "error")
+            return redirect(url_for('add'))
+
+        new_pet = Pet(img=img, name=name, age=age, breed=breed, species=species)
+        db.session.add(new_pet)
+        db.session.commit()
+        flash(f"Pet '{name}' added successfully!", "success")
+        return redirect(url_for('list_pets'))
+
     return render_template('add.html')
+
 
 # About page 
 @app.route('/about', methods=['GET', 'POST'])
