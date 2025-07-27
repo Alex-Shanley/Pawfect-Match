@@ -1692,8 +1692,11 @@ input[type="checkbox"] {
 
 
 
+/* Add pet  Styles */
+
+
 .add-pet-container {
-  background-image: url("../images/paw-background.png");
+
   display: flex;
   justify-content: center;
   align-items: center;
