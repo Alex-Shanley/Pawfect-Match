@@ -206,8 +206,6 @@ def list_pets():
         species_options=species_options
     )
 
-
-# Add pet  page
 @app.route('/add-pet', methods=['GET', 'POST'])
 def add():
     if request.method == 'POST':
@@ -233,9 +231,7 @@ def add():
         flash(f"Pet '{name}' added successfully!", "success")
         return redirect(url_for('list_pets'))
 
-    return render_template('add-pet.html')
-
-
+    return render_template('add-pets.html')
 
 # About page 
 @app.route('/about', methods=['GET', 'POST'])
