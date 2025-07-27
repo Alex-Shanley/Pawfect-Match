@@ -208,9 +208,9 @@ def list_pets():
 
 
 # Adoption information page
-@app.route('/adopt')
+@app.route('/addpet')
 def adopt():
-    return render_template('adopt.html')
+    return render_template('addpet.html')
 
 # About page 
 @app.route('/about', methods=['GET', 'POST'])
