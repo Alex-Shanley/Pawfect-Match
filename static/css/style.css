@@ -1465,7 +1465,7 @@ input[type="checkbox"] {
   min-width: 250px; 
   max-width: 250px;
   padding: 1rem 1.5rem;
-  font-size: 18px; /* matches .card-content p */
+  font-size: 18px; 
   font-weight: 500;
   border: 2px solid #2d4be2;
   border-radius: 16px;
@@ -1718,7 +1718,10 @@ input[type="checkbox"] {
 .add-pet-form-wrapper {
   flex: 1;
   max-width: 500px;
-  background: rgba(255, 255, 255, 0.95);
+  background-image: url("../images/contact-form-image.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   padding: 40px 30px;
   border-radius: 24px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
