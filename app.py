@@ -324,7 +324,7 @@ def add():
 # edit pets start 
 # -------------------------------
 
-@app.route('/edit_pet/<int:pet_id>', methods=['GET', 'POST'])
+@app.route('/edit/<int:pet_id>', methods=['GET', 'POST'])
 def edit_pet(pet_id):
     pet = Pet.query.get_or_404(pet_id)
 
@@ -347,7 +347,7 @@ def edit_pet(pet_id):
         flash('Pet updated successfully!', 'success')
         return redirect(url_for('list_pets'))
     
-    return render_template('edit_pet.html', pet=pet)
+    return render_template('edit.html', pet=pet)
 
 
 
