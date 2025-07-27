@@ -1871,7 +1871,7 @@ input[type="checkbox"] {
 }
 
 
-delete-btn {
+.delete-btn {
   background-color: #f5a623;
   color: white;
   border: none;
@@ -1894,6 +1894,7 @@ delete-btn {
   text-decoration: none;
   cursor: pointer;
   transition: color 0.3s ease, text-decoration 0.3s ease;
+  text-decoration: overline;
 }
 
 .edit-btn:hover {
