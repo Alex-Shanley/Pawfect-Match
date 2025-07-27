@@ -1772,6 +1772,7 @@ input[type="checkbox"] {
 
 .add-pet-form-group input[type="file"] {
   padding: 8px 10px;
+  background-color: #ffffff;
 }
 
 .add-pet-btn {
@@ -1792,6 +1793,7 @@ input[type="checkbox"] {
 }
 
 /* Responsive */
+
 @media (max-width: 1024px) {
   .add-pet-section {
     padding: 60px 30px;
@@ -1813,6 +1815,7 @@ input[type="checkbox"] {
   .add-pet-image,
   .add-pet-form-wrapper {
     max-width: 100%;
+    margin-top: 0;
   }
 
   .add-pet-title {
@@ -1823,6 +1826,7 @@ input[type="checkbox"] {
   .add-pet-btn {
     width: 100%;
     text-align: center;
+    align-self: center;
   }
 }
 
