@@ -1,8 +1,10 @@
 from flask import Flask, render_template, url_for, request, redirect, flash
 from flask_sqlalchemy import SQLAlchemy
+from werkzeug.utils import secure_filename
 import os
 from dotenv import load_dotenv
 import requests
+import uuid  
 
 # -------------------------------
 # Load environment variables
@@ -31,13 +33,13 @@ def allowed_file(filename):
 # -------------------------------
 database_url = os.environ.get('DATABASE_URL', 'sqlite:///test.db')
 if database_url.startswith("postgres://"):
-    
     database_url = database_url.replace("postgres://", "postgresql://", 1)
 
 app.config['SQLALCHEMY_DATABASE_URI'] = database_url
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
+
 
 # -------------------------------
 # Database Models
