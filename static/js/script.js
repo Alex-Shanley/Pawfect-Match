@@ -47,7 +47,7 @@ document.getElementById('contactform').addEventListener('submit', function(event
   });
 
   // Notification
-  const notificationMessage = `Thank you for reaching out to the Gentleman, ${firstName} ${lastName}. Your message has been sent successfully.`;
+  const notificationMessage = `Thank you for reaching out to the Pawfect Match, ${firstName} ${lastName}. Your message has been sent successfully.`;
   alert(notificationMessage);
 
   // Delay and submit after 1 second
