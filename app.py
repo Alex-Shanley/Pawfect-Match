@@ -206,9 +206,9 @@ def list_pets():
         species_options=species_options
     )
 
-@app.route('/add-pet', methods=['GET'])
+@app.route('/add', methods=['GET'])
 def add():
-    return render_template('add-pets.html')
+    return render_template('add.html')
 
 # About page 
 @app.route('/about', methods=['GET', 'POST'])
