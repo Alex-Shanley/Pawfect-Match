@@ -1706,13 +1706,14 @@ input[type="checkbox"] {
 
 .add-pet-image {
   flex: 1;
-  max-width: 700px;
+  min-width: 700px;
 }
 
 .add-pet-image img {
-  width: 100%;
-  border-radius: 20px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  max-width: 700px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 30px;
 }
 
 .add-pet-form-wrapper {
