@@ -41,6 +41,35 @@ class Pet(db.Model):
 
     def __repr__(self):
         return f'<Pet {self.name}>'
+    
+
+    # --- Seed Pets Function ---
+
+def seed_pets():
+    if Pet.query.count() == 0:
+        pets_available = [
+            Pet(img='images/Golden-Retriever.png', name='Charlie', age=3, breed='Golden Retriever', species='Dog'),
+            Pet(img='images/Beagle.png', name='Max', age=2, breed='Beagle', species='Dog'),
+            Pet(img='images/Bulldogg.png', name='Rocky', age=5, breed='Bulldog', species='Dog'),
+            Pet(img='images/Husky.png', name='Ghost', age=4, breed='Siberian Husky', species='Dog'),
+            Pet(img='images/Tabby.png', name='Luna', age=1, breed='Tabby', species='Cat'),
+            Pet(img='images/Siamese.png', name='Simba', age=3, breed='Siamese', species='Cat'),
+            Pet(img='images/Persian.png', name='Nala', age=4, breed='Persian', species='Cat'),
+            Pet(img='images/Bengal.png', name='Tiger', age=2, breed='Bengal', species='Cat'),
+            Pet(img='images/Lop.png', name='Hazel', age=1, breed='Lop', species='Rabbit'),
+            Pet(img='images/Rex.png', name='Cinnamon', age=2, breed='Rex', species='Rabbit'),
+            Pet(img='images/Angora.png', name='Snowflake', age=2, breed='Angora', species='Rabbit'),
+            Pet(img='images/Macaw.png', name='Skye', age=2, breed='Macaw', species='Bird'),
+            Pet(img='images/Cockatiel.png', name='Sunny', age=1, breed='Cockatiel', species='Bird'),
+            Pet(img='images/Parakeet.png', name='Kiwi', age=2, breed='Parakeet', species='Bird'),
+            Pet(img='images/LeopardGecko.png', name='Leo', age=1, breed='Leopard Gecko', species='Reptile'),
+            Pet(img='images/BeardedDragon.png', name='Spike', age=3, breed='Bearded Dragon', species='Reptile'),
+            Pet(img='images/CornSnake.png', name='Slyther', age=2, breed='Corn Snake', species='Reptile'),
+            Pet(img='images/BoxTurtle.png', name='Shelly', age=4, breed='Box Turtle', species='Reptile'),
+            Pet(img='images/VeiledChameleon.png', name='Echo', age=2, breed='Veiled Chameleon', species='Reptile'),
+        ]
+        db.session.bulk_save_objects(pets_available)
+        db.session.commit()
 
 class Submission(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -125,6 +154,7 @@ from sqlalchemy import distinct
 
 @app.route('/pets', methods=['GET', 'POST'])
 def list_pets():
+    
     if Pet.query.count() == 0:
         pets_available = [
             Pet(img='images/Golden-Retriever.png', name='Charlie', age=3, breed='Golden Retriever', species='Dog'),
@@ -147,10 +177,10 @@ def list_pets():
             Pet(img='images/BoxTurtle.png', name='Shelly', age=4, breed='Box Turtle', species='Reptile'),
             Pet(img='images/VeiledChameleon.png', name='Echo', age=2, breed='Veiled Chameleon', species='Reptile'),
         ]
-        for pet in pets_available:
-            db.session.add(pet)
+        db.session.bulk_save_objects(pets_available)
         db.session.commit()
 
+    
     if request.method == 'POST':
         first_name = request.form.get('first_name')
         surname = request.form.get('surname')
@@ -158,6 +188,7 @@ def list_pets():
         message = request.form.get('message')
         terms = request.form.get('terms') == 'on'
         flash('Thank you for contacting us!!')
+
         pets = Pet.query.all()
         species_options = [row[0] for row in db.session.query(distinct(Pet.species)).all()]
         return render_template(
@@ -175,6 +206,7 @@ def list_pets():
             terms=terms,
         )
 
+    
     name = request.args.get('name', '').strip()
     age = request.args.get('age', '').strip()
     breed = request.args.get('breed', '').strip()
@@ -205,6 +237,7 @@ def list_pets():
         selected_species=species,
         species_options=species_options
     )
+
 
 @app.route('/add', methods=['GET', 'POST'])
 def add():
