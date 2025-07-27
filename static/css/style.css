@@ -1863,3 +1863,40 @@ input[type="checkbox"] {
 
 
 /* edit pet start   */
+
+.card-actions {
+  display: flex;
+  gap: 12px;  
+  align-items: center;
+}
+
+
+delete-btn {
+  background-color: #f5a623;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 24px;
+  border-radius: 99px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.delete-btn:hover {
+  background-color: #e59400;
+}
+
+.edit-btn {
+  color: #233BA9;
+  font-weight: 600;
+  font-size: 18px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.edit-btn:hover {
+  color: #0d2aa7;
+  text-decoration: underline;
+}
