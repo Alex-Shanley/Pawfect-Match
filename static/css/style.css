@@ -1866,8 +1866,9 @@ input[type="checkbox"] {
 
 .card-actions {
   display: flex;
-  gap: 12px;  
+  gap: 20px;  
   align-items: center;
+  margin-top: 20px;
 }
 
 
@@ -1876,7 +1877,7 @@ input[type="checkbox"] {
   color: white;
   border: none;
   padding: 12px 24px;
-  font-size: 24px;
+  font-size: 18px;
   border-radius: 99px;
   cursor: pointer;
   font-weight: 500;
@@ -1885,6 +1886,7 @@ input[type="checkbox"] {
 
 .delete-btn:hover {
   background-color: #e59400;
+  color: #ffffff;
 }
 
 .edit-btn {
@@ -1894,7 +1896,7 @@ input[type="checkbox"] {
   text-decoration: none;
   cursor: pointer;
   transition: color 0.3s ease, text-decoration 0.3s ease;
-  text-decoration: overline;
+  text-decoration: underline;
 }
 
 .edit-btn:hover {
