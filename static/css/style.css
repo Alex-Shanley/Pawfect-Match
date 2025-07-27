@@ -1690,3 +1690,155 @@ input[type="checkbox"] {
   }
 }
 
+
+
+.add-pet-container {
+  background-image: url("../images/paw-background.png");
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.add-form-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.add-form-box {
+  width: 40%;
+  margin: 0;
+  background-image: url("../images/contact-form-image.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 40px 30px;
+  border-radius: 30px;
+  backdrop-filter: blur(2px);
+}
+
+.add-form-box h2 {
+  font-size: 60px;
+  color: #233BA9;
+  margin-bottom: 16px;
+}
+
+.add-form-box p {
+  color: #233BA9;
+  font-size: 24px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.add-form-box form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.add-row {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.add-form-box input[type="text"],
+.add-form-box input[type="number"],
+.add-form-box input[type="file"] {
+  padding: 15px;
+  border: 2px solid #233BA9;
+  font-size: 14px;
+  border-radius: 10px;
+  width: 100%;
+}
+
+.add-btn {
+  align-self: flex-end;
+  background-color: #233BA9;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-size: 16px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.add-btn:hover {
+  background-color: #0d2aa7;
+  transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .add-form-box {
+    padding: 30px 20px;
+    width: 100%;
+  }
+
+  .add-form-box h2 {
+    font-size: 40px;
+  }
+
+  .add-form-box p {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .add-pet-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 20px;
+  }
+
+  .add-form-wrapper {
+    width: 100%;
+  }
+
+  .add-form-box h2 {
+    font-size: 32px;
+    text-align: center;
+  }
+
+  .add-form-box p {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .add-row {
+    flex-direction: column;
+  }
+
+  .add-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .add-form-box h2 {
+    font-size: 28px;
+  }
+
+  .add-form-box p {
+    font-size: 16px;
+  }
+
+  .add-form-box input {
+    font-size: 13px;
+    padding: 12px;
+  }
+
+  .add-btn {
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+}
