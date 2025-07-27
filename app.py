@@ -123,9 +123,8 @@ def index():
 # Pets listing page
 from sqlalchemy import distinct
 
-@app.route('/pets')
+@app.route('/pets', methods=['GET', 'POST'])
 def list_pets():
-    
     if Pet.query.count() == 0:
         pets_available = [
             Pet(img='images/Golden-Retriever.png', name='Charlie', age=3, breed='Golden Retriever', species='Dog'),
@@ -152,13 +151,35 @@ def list_pets():
             db.session.add(pet)
         db.session.commit()
 
-    
+    if request.method == 'POST':
+        first_name = request.form.get('first_name')
+        surname = request.form.get('surname')
+        email = request.form.get('email')
+        message = request.form.get('message')
+        terms = request.form.get('terms') == 'on'
+        flash('Thank you for contacting us!!')
+        pets = Pet.query.all()
+        species_options = [row[0] for row in db.session.query(distinct(Pet.species)).all()]
+        return render_template(
+            'pets.html',
+            pets=pets,
+            name='',
+            age='',
+            breed='',
+            selected_species='',
+            species_options=species_options,
+            first_name=first_name,
+            surname=surname,
+            email=email,
+            message=message,
+            terms=terms,
+        )
+
     name = request.args.get('name', '').strip()
     age = request.args.get('age', '').strip()
     breed = request.args.get('breed', '').strip()
     species = request.args.get('species', '').strip()
 
-    
     query = Pet.query
     if name:
         query = query.filter(Pet.name.ilike(f"%{name}%"))
@@ -173,8 +194,6 @@ def list_pets():
         query = query.filter(Pet.species == species)
 
     pets = query.all()
-
-    
     species_options = [row[0] for row in db.session.query(distinct(Pet.species)).all()]
 
     return render_template(
