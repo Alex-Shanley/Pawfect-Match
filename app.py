@@ -15,6 +15,15 @@ load_dotenv()
 app = Flask(__name__, template_folder='templates', static_folder='static')
 app.secret_key = 'a8f3@9!gks92&x1z'
 
+
+UPLOAD_FOLDER = os.path.join(app.root_path, 'static/uploads')
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+
+ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
+
+def allowed_file(filename):
+    return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+
 # -------------------------------
 # Database configuration
 # -------------------------------
@@ -242,7 +251,27 @@ def list_pets():
 @app.route('/add', methods=['GET', 'POST'])
 def add():
     if request.method == 'POST':
-        img = request.form.get('img')
+        if 'image' not in request.files:
+            flash("No image file part", "error")
+            return redirect(request.url)
+
+        file = request.files['image']
+
+        if file.filename == '':
+            flash("No image selected", "error")
+            return redirect(request.url)
+
+        if file and allowed_file(file.filename):
+            filename = secure_filename(file.filename)
+            unique_filename = f"{uuid.uuid4().hex}_{filename}"
+            os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
+            file.save(os.path.join(app.config['UPLOAD_FOLDER'], unique_filename))
+            img_path = f'uploads/{unique_filename}'
+        else:
+            flash("Allowed image types: png, jpg, jpeg, gif", "error")
+            return redirect(request.url)
+
+        
         name = request.form.get('name')
         age = request.form.get('age')
         breed = request.form.get('breed')
@@ -250,15 +279,15 @@ def add():
 
         if not name or not age or not breed or not species:
             flash("Please fill in all required fields!", "error")
-            return redirect(url_for('add'))
+            return redirect(request.url)
 
         try:
             age = int(age)
         except ValueError:
             flash("Age must be a number", "error")
-            return redirect(url_for('add'))
+            return redirect(request.url)
 
-        new_pet = Pet(img=img, name=name, age=age, breed=breed, species=species)
+        new_pet = Pet(img=img_path, name=name, age=age, breed=breed, species=species)
         db.session.add(new_pet)
         db.session.commit()
         flash(f"Pet '{name}' added successfully!", "success")
