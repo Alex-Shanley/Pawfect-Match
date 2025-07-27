@@ -253,48 +253,50 @@ def list_pets():
 @app.route('/add', methods=['GET', 'POST'])
 def add():
     if request.method == 'POST':
-        if 'image' not in request.files:
-            flash("No image file part", "error")
-            return redirect(request.url)
-
-        file = request.files['image']
-
-        if file.filename == '':
-            flash("No image selected", "error")
-            return redirect(request.url)
-
-        if file and allowed_file(file.filename):
-            filename = secure_filename(file.filename)
-            unique_filename = f"{uuid.uuid4().hex}_{filename}"
-            os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
-            file.save(os.path.join(app.config['UPLOAD_FOLDER'], unique_filename))
-            img_path = f'uploads/{unique_filename}'
-        else:
-            flash("Allowed image types: png, jpg, jpeg, gif", "error")
-            return redirect(request.url)
-
-        
-        name = request.form.get('name')
-        age = request.form.get('age')
-        breed = request.form.get('breed')
-        species = request.form.get('species')
-
-        if not name or not age or not breed or not species:
-            flash("Please fill in all required fields!", "error")
-            return redirect(request.url)
-
         try:
-            age = int(age)
-        except ValueError:
-            flash("Age must be a number", "error")
+            if 'image' not in request.files:
+                flash("No image file part", "error")
+                return redirect(request.url)
+
+            file = request.files['image']
+
+            if file.filename == '':
+                flash("No image selected", "error")
+                return redirect(request.url)
+
+            if file and allowed_file(file.filename):
+                filename = secure_filename(file.filename)
+                unique_filename = f"{uuid.uuid4().hex}_{filename}"
+                os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
+                file.save(os.path.join(app.config['UPLOAD_FOLDER'], unique_filename))
+                img_path = f'uploads/{unique_filename}'
+            else:
+                flash("Allowed image types: png, jpg, jpeg, gif", "error")
+                return redirect(request.url)
+
+            name = request.form.get('name')
+            age = request.form.get('age')
+            breed = request.form.get('breed')
+            species = request.form.get('species')
+
+            if not name or not age or not breed or not species:
+                flash("Please fill in all required fields!", "error")
+                return redirect(request.url)
+
+            try:
+                age = int(age)
+            except ValueError:
+                flash("Age must be a number", "error")
+                return redirect(request.url)
+
+            new_pet = Pet(img=img_path, name=name, age=age, breed=breed, species=species)
+            db.session.add(new_pet)
+            db.session.commit()
+            flash(f"Pet '{name}' added successfully!", "success")
+            return redirect(url_for('list_pets'))
+        except Exception as e:
+            flash(f"An error occurred: {str(e)}", "error")
             return redirect(request.url)
-
-        new_pet = Pet(img=img_path, name=name, age=age, breed=breed, species=species)
-        db.session.add(new_pet)
-        db.session.commit()
-        flash(f"Pet '{name}' added successfully!", "success")
-        return redirect(url_for('list_pets'))
-
     return render_template('add.html')
 
 
