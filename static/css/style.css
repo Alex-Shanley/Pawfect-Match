@@ -1693,37 +1693,51 @@ input[type="checkbox"] {
 
 
 /* Add pet  Styles */
-
-.add-pet-form-container {
+.add-pet-section {
   display: flex;
-  justify-content: center;
   align-items: center;
-  padding: 60px 20px;
+  justify-content: center;
+  padding: 60px 40px;
+  background: url("../images/paw-background.png") no-repeat center center;
   background-size: cover;
-  min-height: 100vh;
+  flex-wrap: wrap;
+  gap: 40px;
 }
 
-.add-pet-form {
-  background-image: url("../images/contact-form-image.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+.add-pet-image {
+  flex: 1;
+  max-width: 500px;
+}
+
+.add-pet-image img {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.add-pet-form-wrapper {
+  flex: 1;
+  max-width: 500px;
+  background: rgba(255, 255, 255, 0.95);
   padding: 40px 30px;
   border-radius: 24px;
-  max-width: 800px;
-  width: 100%;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
+.add-pet-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
 .add-pet-title {
+  font-size: 32px;
+  color: #233BA9;
+  margin-bottom: 20px;
   text-align: center;
-  font-size: 60px;
-  color: #2743CB;
-  margin-bottom: 30px;
 }
 
 .add-pet-form-group {
-  margin-bottom: 20px;
   display: flex;
   flex-direction: column;
 }
@@ -1731,24 +1745,22 @@ input[type="checkbox"] {
 .add-pet-form-group label {
   margin-bottom: 8px;
   font-weight: 600;
-  color: #2743CB;
+  color: #233BA9;
 }
 
 .add-pet-form-group input[type="text"],
 .add-pet-form-group input[type="number"],
 .add-pet-form-group input[type="file"] {
   padding: 12px 15px;
-  border: 2px solid #2743CB;
+  border: 2px solid #233BA9;
   border-radius: 10px;
-  font-size: 18px;
-  outline: none;
+  font-size: 16px;
 }
 
 .add-pet-btn {
-  width: 100%;
-  padding: 15px;
-  background-color: #2743CB;
+  background-color: #233BA9;
   color: white;
+  padding: 15px;
   font-size: 18px;
   border: none;
   border-radius: 999px;
@@ -1759,4 +1771,17 @@ input[type="checkbox"] {
 .add-pet-btn:hover {
   background-color: #0d2aa7;
   transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .add-pet-section {
+    flex-direction: column;
+    padding: 40px 20px;
+  }
+
+  .add-pet-image,
+  .add-pet-form-wrapper {
+    max-width: 100%;
+  }
 }
