@@ -162,7 +162,10 @@ def index():
     return render_template('index.html', steps=steps, form_action=url_for('index'))
 
 
-# Pets listing page
+# -------------------------------
+# Pet listing page start
+# -------------------------------
+
 from sqlalchemy import distinct
 
 @app.route('/pets', methods=['GET', 'POST'])
@@ -252,6 +255,15 @@ def list_pets():
     )
 
 
+# -------------------------------
+# Pet listing page end
+# -------------------------------
+
+# -------------------------------
+# Add pet start
+# -------------------------------
+
+
 @app.route('/add', methods=['GET', 'POST'])
 def add():
     if request.method == 'POST':
@@ -300,6 +312,50 @@ def add():
             flash(f"An error occurred: {str(e)}", "error")
             return redirect(request.url)
     return render_template('add.html')
+
+
+# -------------------------------
+# Add pet end
+# -------------------------------
+
+
+
+# -------------------------------
+# edit pets start 
+# -------------------------------
+
+@app.route('/edit/<int:pet_id>', methods=['GET', 'POST'])
+def edit_pet(pet_id):
+    pet = Pet.query.get_or_404(pet_id)
+
+    if request.method == 'POST':
+        pet.name = request.form['name']
+        pet.age = int(request.form['age'])
+        pet.breed = request.form['breed']
+        pet.species = request.form['species']
+
+        if 'image' in request.files:
+            image_file = request.files['image']
+            if image_file and image_file.filename != '':
+                filename = secure_filename(image_file.filename)
+                filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+                image_file.save(filepath)
+                pet.image = filename
+
+        db.session.commit()
+
+        flash('Pet updated successfully!', 'success')
+        return redirect(url_for('pets'))
+
+    return render_template('edit.html', pet=pet)
+
+
+# -------------------------------
+# edit pets end
+# -------------------------------
+
+
+
 
 
 # About page 

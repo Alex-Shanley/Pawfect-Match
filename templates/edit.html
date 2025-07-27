@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block title %} Pawfect Match{% endblock %}
+
+{% block content %}
+
+
+
+
+{% set title = "Edit pet" %}
+{% include 'hero.html' %}
+
+<div class="edit-pet-section">
+  <div class="edit-pet-image">
+    <img src="{{ url_for('static', filename=pet.img) }}" alt="{{ pet.name }}" />
+  </div>
+
+  <div class="edit-pet-form-wrapper">
+    <form method="POST" enctype="multipart/form-data" action="{{ url_for('edit_pet', pet_id=pet.id) }}" class="edit-pet-form">
+      
+      <h2>Edit Pet</h2>
+
+      <div class="form-group">
+        <label for="image">Upload New Image (optional):</label>
+        <input type="file" name="image" accept="image/*" />
+      </div>
+
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" name="name" value="{{ pet.name }}" required />
+      </div>
+
+      <div class="form-group">
+        <label for="age">Age:</label>
+        <input type="number" name="age" value="{{ pet.age }}" required />
+      </div>
+
+      <div class="form-group">
+        <label for="breed">Breed:</label>
+        <input type="text" name="breed" value="{{ pet.breed }}" required />
+      </div>
+
+      <div class="form-group">
+        <label for="species">Species:</label>
+        <input type="text" name="species" value="{{ pet.species }}" required />
+      </div>
+
+      <button type="submit">Update Pet</button>
+    </form>
+  </div>
+</div>
+
+
+
+
+
+{% include 'dog-fact.html' %}
+
+
+
+{% include 'form.html' %}
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
