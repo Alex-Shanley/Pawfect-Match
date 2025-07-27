@@ -10,26 +10,39 @@
 {% set title = "Add pets" %}
 {% include 'hero.html' %}
 
+<div class="add-pet-form-container">
+  <form method="POST" enctype="multipart/form-data" action="{{ url_for('add') }}" class="add-pet-form">
+    
+    <h2 class="add-pet-title">Add a New Pet</h2>
 
-<form method="POST" enctype="multipart/form-data" action="{{ url_for('add') }}">
-  <label for="img">Upload Pet Image:</label>
-  <input type="file" name="image" accept="image/*" required>
-  
-  <label for="name">Name:</label>
-  <input type="text" name="name" required>
-  
-  <label for="age">Age:</label>
-  <input type="number" name="age" required>
-  
-  <label for="breed">Breed:</label>
-  <input type="text" name="breed" required>
-  
-  <label for="species">Species:</label>
-  <input type="text" name="species" required>
-  
-  <button type="submit">Add Pet</button>
-</form>
+    <div class="add-pet-form-group">
+      <label for="img">Upload Pet Image:</label>
+      <input type="file" name="image" accept="image/*" required>
+    </div>
 
+    <div class="add-pet-form-group">
+      <label for="name">Name:</label>
+      <input type="text" name="name" required>
+    </div>
+
+    <div class="add-pet-form-group">
+      <label for="age">Age:</label>
+      <input type="number" name="age" required>
+    </div>
+
+    <div class="add-pet-form-group">
+      <label for="breed">Breed:</label>
+      <input type="text" name="breed" required>
+    </div>
+
+    <div class="add-pet-form-group">
+      <label for="species">Species:</label>
+      <input type="text" name="species" required>
+    </div>
+
+    <button type="submit" class="add-pet-btn">Add Pet</button>
+  </form>
+</div>
 
 
 
