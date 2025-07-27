@@ -40,7 +40,7 @@
     {% if pets %}
       {% for pet in pets %}
         <div class="pet-card">
-          <img src="{{ url_for('static', filename=pet.img) }}" alt="{{ pet.name }}" />
+          <img src="{{ url_for('static', filename=pet.image or pet.img) }}" alt="{{ pet.name }}">
           <div class="card-content">
             <p class="species">{{ pet.species | upper }}</p>
             <h3>{{ pet.name }}</h3>
