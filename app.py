@@ -340,7 +340,7 @@ def edit_pet(pet_id):
                 filename = secure_filename(image_file.filename)
                 filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
                 image_file.save(filepath)
-                pet.image = filename
+                pet.img = filename
 
         db.session.commit()
 
