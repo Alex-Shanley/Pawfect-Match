@@ -330,7 +330,11 @@ def edit_pet(pet_id):
 
     if request.method == 'POST':
         pet.name = request.form['name']
-        pet.age = int(request.form['age'])
+        try:
+            pet.age = int(request.form['age'])
+        except ValueError:
+            flash("Age must be a number", "error")
+            return redirect(request.url)
         pet.breed = request.form['breed']
         pet.species = request.form['species']
 
@@ -338,16 +342,19 @@ def edit_pet(pet_id):
             image_file = request.files['image']
             if image_file and image_file.filename != '':
                 filename = secure_filename(image_file.filename)
-                filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
-                image_file.save(filepath)
-                pet.img = filename
+                unique_filename = f"{uuid.uuid4().hex}_{filename}"
+                os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
+                image_path = os.path.join(app.config['UPLOAD_FOLDER'], unique_filename)
+                image_file.save(image_path)
+                pet.img = f'uploads/{unique_filename}'
 
         db.session.commit()
 
         flash('Pet updated successfully!', 'success')
-        return redirect(url_for('pets'))
+        return redirect(url_for('list_pets'))  
 
     return render_template('edit.html', pet=pet)
+
 
 
 # -------------------------------
