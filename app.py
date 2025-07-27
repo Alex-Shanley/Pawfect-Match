@@ -13,9 +13,11 @@ load_dotenv()
 # Initialize Flask app
 # -------------------------------
 app = Flask(__name__, template_folder='templates', static_folder='static')
-app.secret_key = 'a8f3@9!gks92&x1z'
+app.secret_key = os.getenv('SECRET_KEY', 'a8f3@9!gks92&x1z')  # secure fallback
 
-
+# -------------------------------
+# File Upload Config
+# -------------------------------
 UPLOAD_FOLDER = os.path.join(app.root_path, 'static/uploads')
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
