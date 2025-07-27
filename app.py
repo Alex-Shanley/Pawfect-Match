@@ -15,7 +15,7 @@ load_dotenv()
 # Initialize Flask app
 # -------------------------------
 app = Flask(__name__, template_folder='templates', static_folder='static')
-app.secret_key = os.getenv('SECRET_KEY', 'a8f3@9!gks92&x1z')  # secure fallback
+app.secret_key = os.getenv('SECRET_KEY', 'a8f3@9!gks92&x1z')  
 
 # -------------------------------
 # File Upload Config
@@ -324,36 +324,30 @@ def add():
 # edit pets start 
 # -------------------------------
 
-@app.route('/edit/<int:pet_id>', methods=['GET', 'POST'])
+@app.route('/edit_pet/<int:pet_id>', methods=['GET', 'POST'])
 def edit_pet(pet_id):
     pet = Pet.query.get_or_404(pet_id)
 
     if request.method == 'POST':
+        # update pet attributes from form data
         pet.name = request.form['name']
-        try:
-            pet.age = int(request.form['age'])
-        except ValueError:
-            flash("Age must be a number", "error")
-            return redirect(request.url)
+        pet.age = int(request.form['age'])
         pet.breed = request.form['breed']
         pet.species = request.form['species']
 
+        # Handle image upload if any
         if 'image' in request.files:
             image_file = request.files['image']
-            if image_file and image_file.filename != '':
+            if image_file.filename != '':
                 filename = secure_filename(image_file.filename)
-                unique_filename = f"{uuid.uuid4().hex}_{filename}"
-                os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
-                image_path = os.path.join(app.config['UPLOAD_FOLDER'], unique_filename)
-                image_file.save(image_path)
-                pet.img = f'uploads/{unique_filename}'
-
+                image_file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+                pet.img = filename
+        
         db.session.commit()
-
         flash('Pet updated successfully!', 'success')
-        return redirect(url_for('list_pets'))  
-
-    return render_template('edit.html', pet=pet)
+        return redirect(url_for('list_pets'))
+    
+    return render_template('edit_pet.html', pet=pet)
 
 
 
