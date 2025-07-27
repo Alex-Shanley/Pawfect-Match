@@ -351,6 +351,15 @@ def edit_pet(pet_id):
 
 
 
+
+@app.route('/delete_pet/<int:pet_id>', methods=['POST'])
+def delete_pet(pet_id):
+    pet = Pet.query.get_or_404(pet_id)
+    db.session.delete(pet)
+    db.session.commit()
+    flash(f"Deleted pet {pet.name}", "success")
+    return redirect(url_for('list_pets'))
+
 # -------------------------------
 # edit pets end
 # -------------------------------

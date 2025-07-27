@@ -1846,4 +1846,9 @@ input[type="checkbox"] {
     padding: 12px 20px;
     font-size: 14px;
   }
+
+  .add-pet-image img {
+  max-width: 350px;
+
+}
 }
