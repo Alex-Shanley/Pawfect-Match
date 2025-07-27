@@ -1,22 +1,27 @@
 <section class="how-we-work">
-  <p class="subheading">The Process Is Divided In Three Easy Steps</p>
-  <h2 class="title">How It Works</h2>
+  <p class="subheading">Introductory subtitle</p>
+  <h2 class="title">Main section title</h2>
 
   <div class="steps">
+    <!-- List of steps with title and description -->
     {% for step in steps %}
       <div class="step-wrapper">
         <div class="step">
+          <!-- Step title -->
           <h3>{{ step.title }}</h3>
+          <!-- Step description -->
           <p>{{ step.description }}</p>
         </div>
       </div>
 
+      <!-- Icon between steps -->
       {% if not loop.last %}
         <div class="paw-print"><i class="fas fa-paw"></i></div>
       {% endif %}
     {% endfor %}
   </div>
 
+  <!-- Button linking to more info page -->
   <div class="more-info">
     <a href="{{ url_for('about') }}"><button>More Info</button></a>
   </div>

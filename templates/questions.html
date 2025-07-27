@@ -1,27 +1,31 @@
 <section class="asked-questions">
   <div class="questions-container">
 
-
-    <!-- Left FAQ Column start-->
+    <!-- Left FAQ Column: Introductory text and illustration -->
     <div class="questions-left">
       <h2>Frequently Asked Questions</h2>
       <p>
+        <!-- Brief introductory paragraph about the FAQ -->
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
       </p>
+      <!-- Illustrative image relevant to FAQ -->
       <img src="{{ url_for('static', filename='images/Illustration.png') }}" alt="FAQ Illustrations" />
     </div>
 
-
-    <!-- Right FAQ Column start -->
+    <!-- Right FAQ Column: List of FAQ items -->
     <div class="questions-right">
       <div class="faq">
+
+        <!-- Individual FAQ item, 'active' class marks initially expanded -->
         <div class="faq-item active">
           <button class="faq-title">How soon will I have my pet?</button>
           <div class="faq-content">
+            <!-- Answer content for the FAQ question -->
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </div>
         </div>
 
+        <!-- Additional FAQ items -->
         <div class="faq-item">
           <button class="faq-title">Is there a waiting list?</button>
           <div class="faq-content">
@@ -56,7 +60,9 @@
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </div>
         </div>
+
       </div>
     </div>
+
   </div>
 </section>

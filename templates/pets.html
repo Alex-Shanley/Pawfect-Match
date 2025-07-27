@@ -15,49 +15,48 @@
 
 
 
-
 <section class="pets-list">
-  <h2>Available Pets</h2>
+    <h2>Available Pets</h2>
 
+    <!-- Search and filter form so visitors can find pets by name, age, breed, or species -->
+    <form method="get" action="{{ url_for('list_pets') }}" id="custom-pet-filter">
+      <input type="text" name="name" placeholder="Name" value="{{ name or '' }}">
+      <input type="text" name="age" placeholder="Age" value="{{ age or '' }}">
+      <input type="text" name="breed" placeholder="Breed" value="{{ breed or '' }}">
 
-  <form method="get" action="{{ url_for('list_pets') }}" id="custom-pet-filter">
-    <input type="text" name="name" placeholder="Name" value="{{ name or '' }}">
-    <input type="text" name="age" placeholder="Age" value="{{ age or '' }}">
-    <input type="text" name="breed" placeholder="Breed" value="{{ breed or '' }}">
-
-    <select name="species">
+      <select name="species">
         <option value="">All Species</option>
         {% for option in species_options %}
-            <option value="{{ option }}" {% if selected_species == option %}selected{% endif %}>{{ option }}</option>
+          <!-- Show each species as an option and keep the selected one highlighted -->
+          <option value="{{ option }}" {% if selected_species == option %}selected{% endif %}>{{ option }}</option>
         {% endfor %}
-    </select>
+      </select>
 
-    <button type="submit">Filter</button>
-    <a href="{{ url_for('list_pets') }}" id="clear-filters">Clear Filters</a>
-</form>
+      <button type="submit">Filter</button>
+      <a href="{{ url_for('list_pets') }}" id="clear-filters">Clear Filters</a>
+    </form>
 
-
-
-
-  <div class="pets-container">
-    {% if pets %}
-      {% for pet in pets %}
-        <div class="pet-card">
-          <img src="{{ url_for('static', filename=pet.img) }}" alt="{{ pet.name }}" />
-          <div class="card-content">
-            <p class="species">{{ pet.species | upper }}</p>
-            <h3>{{ pet.name }}</h3>
-            <p><strong>Breed:</strong> {{ pet.breed }}</p>
-            <p><strong>Age:</strong> {{ pet.age }} years old</p>
+    <!-- This section lists out the pets that match the search/filter -->
+    <div class="pets-container">
+      {% if pets %}
+        <!-- Loop over each pet and display their info in a card -->
+        {% for pet in pets %}
+          <div class="pet-card">
+            <img src="{{ url_for('static', filename=pet.img) }}" alt="{{ pet.name }}" />
+            <div class="card-content">
+              <p class="species">{{ pet.species | upper }}</p>
+              <h3>{{ pet.name }}</h3>
+              <p><strong>Breed:</strong> {{ pet.breed }}</p>
+              <p><strong>Age:</strong> {{ pet.age }} years old</p>
+            </div>
           </div>
-        </div>
-      {% endfor %}
-    {% else %}
-      <p>No pets available at the moment. Please check back later!</p>
-    {% endif %}
-  </div>
-</section>
-
+        {% endfor %}
+      {% else %}
+        <!-- If no pets are available, let users know -->
+        <p>No pets available at the moment. Please check back later!</p>
+      {% endif %}
+    </div>
+  </section>
 
 {% include 'dog-fact.html' %}
 

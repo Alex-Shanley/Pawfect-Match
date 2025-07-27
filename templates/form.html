@@ -1,49 +1,55 @@
+<div class="contact-form-container">
+  <!-- Container for the whole contact form section -->
 
-        <div class="contact-form-container">
+  <div class="right-contact-template">
+    <!-- Wrapper for the right side/form area -->
 
-            <div class="right-contact-template">
-        <div class="form-box-template">
-            <h2>Get In touch </h2>
+    <div class="form-box-template">
+      <!-- Form box with heading and description -->
 
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</p>
-           
-           
-            <form id="contactform" method="POST" action="{{ form_action}}">
+      <h2>Get In touch </h2>
+      <!-- Section title -->
 
-                <div class="name-row-template">
-                     <input type="text" name="first_name" placeholder="First name" required>
-                     <input type="text" name="surname" placeholder="Surname" required>
-                </div>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</p>
+      <!-- Introductory text about contacting -->
 
-                <input type="email" name="email" placeholder="Email" required>
-                <textarea name="message" placeholder="Message" required></textarea>
+      <form id="contactform" method="POST" action="{{ form_action}}">
+        <!-- Contact form with POST method and dynamic action URL -->
 
+        <div class="name-row-template">
+          <!-- Row with two input fields for first name and surname -->
+           <input type="text" id="firstName" name="first_name" placeholder="First name" required>
+           <input type="text" id="lastName" name="surname" placeholder="Surname" required>
+        </div>
 
-                <label class="checkbox-wrapper-template">
-                     <input type="checkbox" name="terms" required>
-                    <span>I agree to the Terms and Conditions</span>
-                </label>
+        <input type="email" name="email" placeholder="Email" required>
+        <!-- Email input field -->
 
+        <textarea name="message" placeholder="Message" required></textarea>
+        <!-- Message text area -->
+
+        <label class="checkbox-wrapper-template">
+          <!-- Terms and conditions checkbox -->
+          <input type="checkbox" name="terms" required>
+          <span>I agree to the Terms and Conditions</span>
+        </label>
+
+        <!-- Display any flashed messages (success or error messages from backend) -->
         {% with messages = get_flashed_messages()%}
-            {% if messages %}
+          {% if messages %}
             <ul class="flashes">
-                {% for message in messages %}
-                <li>
-                    {{message}}
-                </li>
-                {% endfor %}
+              {% for message in messages %}
+                <li>{{message}}</li>
+              {% endfor %}
             </ul>
-            {% endif %}
-            {% endwith %}
+          {% endif %}
+        {% endwith %}
 
+        <button class="cbtn-template" type="submit">Send</button>
+        <!-- Submit button to send the form -->
+      </form>
+      <!-- End of contact form -->
 
-                <button class="cbtn-template" type="submit">Send</button>
-            </form>
-
-             <!-- Contact form end -->
-
-        </div>
-
-
-
-        </div>
+    </div>
+  </div>
+</div>

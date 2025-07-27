@@ -25,59 +25,67 @@
     <!-- Contact image end -->
 
 
-     <!-- Contact form start -->
+     <!-- Contact container start -->
+<div class="contact">
 
-    <div class="right-contact">
-        <div class="form-box">
-            <h2>Get In touch </h2>
+  <!-- Left side with contact image -->
+  <div class="left-contact">
+    <div class="left-image">
+      <img src="{{ url_for('static', filename='images/contact-image.png') }}" alt="Contact image" class="Contact image" />
+      <!-- Contact image displayed -->
+    </div>
+  </div>
+  <!-- Contact image end -->
 
+  <!-- Right side with contact form -->
+  <div class="right-contact">
+    <div class="form-box">
+      <h2>Get In touch </h2>
+      <!-- Section heading -->
 
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</p>
+      <!-- Introductory text -->
 
+      <form id="contactform" method="POST" action="{{ url_for('contact') }}">
+        <!-- Contact form with POST to contact route -->
 
-
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</p>
-           
-           
-            <form id="contactform" method="POST" action="{{ url_for('contact') }}">
-
-                <div class="name-row">
-                     <input type="text" name="first_name" placeholder="First name" required>
-                     <input type="text" name="surname" placeholder="Surname" required>
-                </div>
-
-                <input type="email" name="email" placeholder="Email" required>
-                <textarea name="message" placeholder="Message" required></textarea>
-
-
-                <label class="checkbox-wrapper">
-                     <input type="checkbox" name="terms" required>
-                    <span>I agree to the Terms and Conditions</span>
-                </label>
-
-        {% with messages = get_flashed_messages()%}
-            {% if messages %}
-            <ul class="flashes">
-                {% for message in messages %}
-                <li>
-                    {{message}}
-                </li>
-                {% endfor %}
-            </ul>
-            {% endif %}
-            {% endwith %}
-
-
-                <button class="cbtn" type="submit">Send</button>
-            </form>
-
-             <!-- Contact form end -->
+        <div class="name-row">
+          <!-- Row with first name and surname inputs -->
+           <input type="text" id="firstName" name="first_name" placeholder="First name" required>
+           <input type="text" id="lastName" name="surname" placeholder="Surname" required>
 
         </div>
+
+        <input type="email" name="email" placeholder="Email" required>
+        <!-- Email input -->
+
+        <textarea name="message" placeholder="Message" required></textarea>
+        <!-- Message textarea -->
+
+        <label class="checkbox-wrapper">
+          <!-- Checkbox to agree to terms -->
+          <input type="checkbox" name="terms" required>
+          <span>I agree to the Terms and Conditions</span>
+        </label>
+
+        <!-- Display flashed messages -->
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            <ul class="flashes">
+              {% for message in messages %}
+                <li>{{message}}</li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        {% endwith %}
+
+        <button class="cbtn" type="submit">Send</button>
+        <!-- Submit button -->
+      </form>
+      <!-- Contact form end -->
     </div>
+  </div>
 </div>
-
-
-
 <!-- Contact container end -->
 
 {% endblock %}
