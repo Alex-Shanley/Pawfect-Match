@@ -329,13 +329,13 @@ def edit_pet(pet_id):
     pet = Pet.query.get_or_404(pet_id)
 
     if request.method == 'POST':
-        # update pet attributes from form data
+        
         pet.name = request.form['name']
         pet.age = int(request.form['age'])
         pet.breed = request.form['breed']
         pet.species = request.form['species']
 
-        # Handle image upload if any
+        
         if 'image' in request.files:
             image_file = request.files['image']
             if image_file.filename != '':
