@@ -135,16 +135,16 @@ def inject_dog_facts():
 def index():
     steps = [
         {
-            "title": " Reach out to us",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            "title": " Find your pet",
+            "description": "Browse loving pets waiting for their forever home. Use our simple search to meet your perfect match and start your adoption journey today."
         },
         {
-            "title": " Find your pet",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            "title": " Reach out to us",
+            "description": "Got questions or ready to take the next step? Our friendly team is here to help with anything you need just a message or call away."
         },
         {
             "title": " Have A Meeting",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            "description": "Schedule a meet-and-greet to get to know your future furry friend. It’s the perfect way to see if it’s a match made in pawradise."
         }
     ]
 
