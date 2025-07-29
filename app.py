@@ -375,30 +375,30 @@ def about():
         {
             'image': "images/woman.png",
             'alt': 'woman and dog',
-            'title': 'From A Dream',
+            'title': 'Our Mission',
             'paragraphs': [
-                'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-                'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+                'At Pawfect, our mission is to ensure that every pet finds a loving and forever home. We believe in creating',
+                'meaningful connections between caring people and animals in need, making the adoption process simple, safe, and joyful for everyone involved.'
             ],
             'reverse': False
         },
         {
             'image': "images/bulldog.png",
             'alt': 'woman and dog',
-            'title': 'From A Dream',
+            'title': 'What We Do',
             'paragraphs': [
-                'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-                'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+                'We provide a trusted platform where adopters can explore detailed profiles of pets looking for new families.',
+                'Beyond just matching pets and people, we offer guidance, resources, and support throughout the entire adoption journey to help create lasting bonds.'
             ],
             'reverse': True
         },
         {
             'image': "images/man.png",
             'alt': 'woman and dog',
-            'title': 'From A Dream',
+            'title': 'Our Promise',
             'paragraphs': [
-                'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-                'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+                'We are committed to transparency, compassion, and the well-being of every animal in our care.',
+                'Whether you’re adopting, volunteering, or simply learning more, Pawfect is dedicated to fostering a community where every paw finds the perfect place to call home.'
             ],
             'reverse': False
         },
