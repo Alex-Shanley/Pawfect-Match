@@ -377,8 +377,8 @@ def about():
             'alt': 'woman and dog',
             'title': 'Our Mission',
             'paragraphs': [
-                'At Pawfect, our mission is to ensure that every pet finds a loving and forever home. We believe in creating',
-                'meaningful connections between caring people and animals in need, making the adoption process simple, safe, and joyful for everyone involved.'
+                'At Pawfect, our mission is to ensure that every pet finds a loving and forever home.',
+                'We believe in creating meaningful connections between caring people and animals in need, making the adoption process simple, safe, and joyful for everyone involved.'
             ],
             'reverse': False
         },
