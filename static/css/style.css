@@ -280,7 +280,7 @@ nav .sidebar {
   }
   
   .footer-colum ul li a:hover {
-    color: #000000;
+    color: #FEF7E5;
   }
   
   .footer-colum input {
@@ -294,9 +294,9 @@ nav .sidebar {
   
   .footer-colum .input-submit {
     padding: 0px 20px;
-    background: #000000;
+    background: #FEF7E5;
     border: none;
-    color: #ffffff;
+    color: #2941D0;
     cursor: pointer;
   }
   
