@@ -329,24 +329,32 @@ def edit_pet(pet_id):
     pet = Pet.query.get_or_404(pet_id)
 
     if request.method == 'POST':
-        
-        pet.name = request.form['name']
-        pet.age = int(request.form['age'])
-        pet.breed = request.form['breed']
-        pet.species = request.form['species']
+        try:
+            pet.name = request.form['name']
+            pet.age = int(request.form['age'])
+            pet.breed = request.form['breed']
+            pet.species = request.form['species']
 
-        
-        if 'image' in request.files:
-            image_file = request.files['image']
-            if image_file.filename != '':
-                filename = secure_filename(image_file.filename)
-                image_file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-                pet.img = filename
-        
-        db.session.commit()
-        flash('Pet updated successfully!', 'success')
-        return redirect(url_for('list_pets'))
-    
+            if 'image' in request.files:
+                image_file = request.files['image']
+                if image_file.filename != '' and allowed_file(image_file.filename):
+                    filename = secure_filename(image_file.filename)
+                    upload_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+                    os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
+                    image_file.save(upload_path)
+                    pet.img = f'uploads/{filename}'
+                elif image_file.filename != '':
+                    flash("Invalid image type. Allowed: png, jpg, jpeg, gif", "error")
+                    return redirect(request.url)
+
+            db.session.commit()
+            flash('Pet updated successfully!', 'success')
+            return redirect(url_for('list_pets'))
+
+        except Exception as e:
+            flash(f"An error occurred while updating: {str(e)}", "error")
+            return redirect(request.url)
+
     return render_template('edit.html', pet=pet)
 
 
